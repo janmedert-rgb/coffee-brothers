@@ -1,0 +1,10 @@
+{
+  "name": "coffee-brothers-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Coffee Brothers Worms — Static Site + Netlify Functions for Reservations API",
+  "dependencies": {
+    "@netlify/functions": "^4.0.0",
+    "@netlify/neon": "^1.0.0"
+  }
+}

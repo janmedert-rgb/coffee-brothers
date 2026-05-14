@@ -1,0 +1,276 @@
+{
+  "Coffee Classics": [
+    [
+      "Espresso",
+      "Kräftig, direkt, frisch gemahlen.",
+      "Small 2,50€ · Regular 3,60€ · XL 4,40€"
+    ],
+    [
+      "Espresso Macchiato",
+      "Espresso mit feinem Milchschaum.",
+      "Small 2,60€ · Regular 3,80€ · XL 4,60€"
+    ],
+    [
+      "Café Crema",
+      "Mild, rund, der Everyday-Coffee.",
+      "Small 2,60€ · Regular 3,80€ · XL 4,60€"
+    ],
+    [
+      "Filterkaffee",
+      "Klassisch und aromatisch.",
+      "Small 2,50€ · Regular 3,70€ · XL 4,50€"
+    ],
+    [
+      "Cappuccino",
+      "Espresso mit cremigem Milchschaum.",
+      "Small 3,20€ · Regular 3,90€ · XL 4,90€"
+    ],
+    [
+      "Milchcafé",
+      "Soft, milchig, comforting.",
+      "Small 3,20€ · Regular 3,90€ · XL 4,60€"
+    ],
+    [
+      "Latte Macchiato",
+      "Milch, Espresso, Schaum — geschichtet.",
+      "Regular 3,90€ · XL 4,60€"
+    ],
+    [
+      "Flat White",
+      "Intensiver Espresso, silky milk.",
+      "Regular 3,90€"
+    ],
+    [
+      "Hot Chocolate",
+      "Warm, süß, cozy.",
+      "Small 3,50€ · Regular 4,50€ · XL 5,50€"
+    ],
+    [
+      "Bambinoccino",
+      "Für die Kleinen — for free.",
+      "For Free"
+    ]
+  ],
+  "Signature Drinks": [
+    [
+      "Black Macchiato",
+      "Dark caramel notes.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "White Macchiato",
+      "Vanillig und cremig.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "Caramel Macchiato",
+      "Unser süßer Klassiker.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "Flavoured Latte",
+      "Mit Sirup nach Wahl.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "Matcha Latte",
+      "Green energy.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "Chai Latte",
+      "Spiced, warm, smooth.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "Matcha Cold Foam Latte",
+      "Strawberry oder Mango. Limited.",
+      "Regular 5,20€ · XL 6,20€"
+    ]
+  ],
+  "Iced Frappes": [
+    [
+      "Chocolate Frappe",
+      "White oder Black.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "Mocca Frappe",
+      "Coffee × Chocolate.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "Café Frappé",
+      "Iced Coffee Classic.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "Matcha Frappé",
+      "Cremig, grün, kalt.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "Oreo Frappe",
+      "Cookie Crunch.",
+      "Regular 4,60€ · XL 5,50€"
+    ]
+  ],
+  "Smoothies": [
+    [
+      "Erdbeer",
+      "Fruchtig und fresh.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "Erdbeer Banana",
+      "Creamy Fruit Blend.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "Mango",
+      "Tropical.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "Exotic Mix",
+      "Urlaub im Cup.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "Summerfruit",
+      "Berry Vibes.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "Green",
+      "Fresh und light.",
+      "Regular 4,60€ · XL 5,50€"
+    ],
+    [
+      "Peach",
+      "Soft und sweet.",
+      "Regular 4,60€ · XL 5,50€"
+    ]
+  ],
+  "Signature Bagels": [
+    [
+      "Akropolis Bagel",
+      "Feta, Oliven, Tomaten, Gurke, Tzatziki, Rucola — Bagel des Monats.",
+      "6,90€"
+    ],
+    [
+      "Crazy Chicken",
+      "Hähnchen, Curry-Honig-Creme, Frischkäse, Tomaten, Salat, Rucola.",
+      "6,50€"
+    ],
+    [
+      "Lachs",
+      "Geräucherter Lachs, Meerrettich-Frischkäse, Rucola, Salat.",
+      "6,90€"
+    ],
+    [
+      "Little Italy",
+      "Mozzarella, Pesto, getrocknete Tomaten, Rucola, Salat.",
+      "5,90€"
+    ],
+    [
+      "Wellness",
+      "Putenbrust, Frischkäse light, getrocknete Tomaten, Rucola, Salat.",
+      "5,90€"
+    ],
+    [
+      "Tuna",
+      "Thunfisch, Frischkäse, Tomaten, Zwiebeln.",
+      "6,90€"
+    ],
+    [
+      "Green",
+      "Frischkäse, Tomaten, Pesto, Rucola, Salat.",
+      "5,40€"
+    ],
+    [
+      "Milano",
+      "Salami, Pesto, getrocknete Tomaten, Frischkäse.",
+      "5,90€"
+    ],
+    [
+      "Vegano Bagel",
+      "Veganer Bruschetta-Aufstrich, Tomaten, Gurke, Zwiebeln, Rucola.",
+      "6,20€"
+    ],
+    [
+      "Swiss Bagel",
+      "Käse, Tomaten, Gurke, Frischkäse, Rucola.",
+      "5,50€"
+    ],
+    [
+      "Brothers Bagel",
+      "Frischkäse, Gurke, Zwiebeln, Rucola, Salat.",
+      "4,90€"
+    ],
+    [
+      "Sweet Bagel",
+      "Nutella, Marmelade oder Peanut Butter.",
+      "4,20€"
+    ]
+  ],
+  "Spritz & Cocktails": [
+    [
+      "Basil Smash",
+      "Fresh green cocktail.",
+      "7,90€"
+    ],
+    [
+      "Espresso Martini",
+      "Coffee after dark.",
+      "7,90€"
+    ],
+    [
+      "Frozen Aperol",
+      "Icy orange vibes.",
+      "7,90€"
+    ],
+    [
+      "Mango Daiquiri",
+      "Tropical frozen.",
+      "7,90€"
+    ],
+    [
+      "Strawberry Daiquiri",
+      "Berry frozen.",
+      "7,90€"
+    ],
+    [
+      "Grauburgunder trocken",
+      "Weingut Feth.",
+      "5,90€"
+    ]
+  ],
+  "Tee & Fresh": [
+    [
+      "Tee",
+      "Schwarz, Grün, Früchte oder Kräuter.",
+      "3,50€"
+    ],
+    [
+      "Eistee, hausgemacht",
+      "Selbstgemacht und erfrischend.",
+      "4,50€"
+    ],
+    [
+      "Freshly Pressed",
+      "Orange, Limette, Karotte, Apfel, Ingwer — frei kombinieren.",
+      "Regular 4,90€ · XL 6,50€"
+    ],
+    [
+      "Extra Espresso Shot",
+      "Mehr Kick.",
+      "1,10€"
+    ],
+    [
+      "Extra Flavour Shot",
+      "Vanille, Caramel, Haselnuss, Cocos, Mandel, Zimt, Macadamia, Chai, Amaretto.",
+      "1,00€"
+    ]
+  ]
+}
