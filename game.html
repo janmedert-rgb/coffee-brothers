@@ -41,9 +41,9 @@
     <h1 class="game-title"><span>Barista</span> <span class="mint">Rush</span></h1>
     <p class="lead game-lead">Die Morning Rush rollt an! Bereite echte Drinks von unserer Karte zu, kassiere Trinkgeld und mach den höchsten Tagesumsatz in Worms.</p>
     <div class="game-howto">
-      <div><b>1</b><span>Lies die Bestellung auf dem Ticket</span></div>
-      <div><b>2</b><span>Tippe die Zutaten in der richtigen Reihenfolge</span></div>
-      <div><b>3</b><span>Serviere, bevor die Zeit abläuft — schnell = mehr Trinkgeld</span></div>
+      <div><b>1</b><span>Halte zum Einschenken gedrückt — lass in der grünen Zone los</span></div>
+      <div><b>2</b><span>Tippe im Takt zum Aufschäumen — lass die Milch nicht überkochen!</span></div>
+      <div><b>3</b><span>Behalte die Warteschlange im Blick — unsere Gäste sind … speziell.</span></div>
     </div>
     <p class="game-best" id="startBest"></p>
     <div class="cta-row center">
@@ -55,38 +55,43 @@
   <div class="game-screen hidden" id="screenGame">
     <div class="game-hud">
       <div class="hud-box"><span class="hud-label">Tagesumsatz</span><b id="hudScore">0,00&nbsp;€</b></div>
-      <div class="hud-box center-box"><span class="hud-label">Combo</span><b id="hudCombo">×1</b></div>
-      <div class="hud-box right-box"><span class="hud-label">Leben</span><b id="hudLives">☕☕☕</b></div>
+      <div class="hud-box center-box"><span class="hud-label">Vibes</span><b id="hudVibes">×1</b></div>
+      <div class="hud-box right-box"><span class="hud-label">Stammgäste</span><b id="hudHearts">💚💚💚</b></div>
     </div>
 
-    <div class="order-ticket" id="orderTicket">
-      <div class="ticket-head">
-        <span class="ticket-customer" id="ticketCustomer">Gast</span>
-        <span class="ticket-price" id="ticketPrice"></span>
+    <div class="event-banner hidden" id="eventBanner"></div>
+
+    <div class="ticket-queue" id="ticketQueue"></div>
+
+    <div class="order-panel">
+      <div class="op-row"><b id="opDrink">—</b><span id="opPrice"></span></div>
+      <div class="op-steps" id="opSteps"></div>
+      <div class="speech hidden" id="speech"></div>
+    </div>
+
+    <div class="skill-area">
+      <div class="cup-area">
+        <div class="steam-mini s1"></div>
+        <div class="steam-mini s2"></div>
+        <div class="cup" id="cup">
+          <div class="cup-inner" id="cupInner"></div>
+          <div class="pour-band hidden" id="pourBand"><i id="pourPerfect"></i></div>
+        </div>
+        <div class="cup-saucer"></div>
+        <div class="cup-feedback" id="cupFeedback"></div>
+        <div class="money-pop" id="moneyPop"></div>
       </div>
-      <h2 class="ticket-drink" id="ticketDrink">—</h2>
-      <p class="ticket-desc" id="ticketDesc"></p>
-      <div class="ticket-recipe" id="ticketRecipe"></div>
-      <button class="ticket-peek hidden" id="btnPeek">🧾 Rezept spicken (−50 % Trinkgeld)</button>
-      <div class="time-track"><div class="time-bar" id="timeBar"></div></div>
-    </div>
-
-    <div class="cup-area">
-      <div class="steam-mini s1"></div>
-      <div class="steam-mini s2"></div>
-      <div class="cup" id="cup">
-        <div class="cup-layers" id="cupLayers"></div>
+      <div class="meter hidden" id="meter">
+        <div class="meter-track">
+          <div class="meter-zone" id="meterZone"></div>
+          <div class="meter-needle" id="meterNeedle"></div>
+        </div>
+        <div class="meter-progress"><div id="meterProgress"></div></div>
       </div>
-      <div class="cup-saucer"></div>
-      <div class="cup-feedback" id="cupFeedback"></div>
     </div>
 
-    <div class="ingredient-grid" id="ingredientGrid"></div>
-
-    <div class="game-actions">
-      <button class="pill" id="btnClear">↺ Wegkippen</button>
-      <button class="pill primary" id="btnServe">Servieren ✓</button>
-    </div>
+    <p class="step-hint" id="stepHint">&nbsp;</p>
+    <button class="action-btn" id="actionBtn">⬇ HALTEN</button>
   </div>
 
   <!-- GAME OVER SCREEN -->
@@ -96,7 +101,7 @@
     <div class="over-stats">
       <div><span>Tagesumsatz</span><b id="overScore">0,00&nbsp;€</b></div>
       <div><span>Drinks serviert</span><b id="overServed">0</b></div>
-      <div><span>Beste Combo</span><b id="overCombo">×1</b></div>
+      <div><span>Beste Vibes</span><b id="overCombo">×1</b></div>
     </div>
     <p class="game-best" id="overBest"></p>
     <p class="over-cta-text">Durstig geworden? Den echten Drink gibt's bei uns am Obermarkt. 😉</p>
