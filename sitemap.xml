@@ -6,6 +6,7 @@
   <url><loc>https://coffee-brothers.de/reservieren.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://coffee-brothers.de/bestellen.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://coffee-brothers.de/besuch.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://coffee-brothers.de/game.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://coffee-brothers.de/impressum.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://coffee-brothers.de/datenschutz.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
 </urlset>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/img/logo.webp">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/game.css">
+<script defer src="assets/js/app.js"></script>
+<script defer src="assets/js/game.js"></script>
+<title>Barista Rush | Coffee Brothers Worms</title>
+<meta name="description" content="Barista Rush — das Coffee Brothers Game. Bereite echte Drinks von unserer Karte zu, sammle Trinkgeld und knacke den Highscore.">
+<meta property="og:title" content="Barista Rush — das Coffee Brothers Game">
+<meta property="og:description" content="Schaffst du die Morning Rush? Echte Drinks, echte Rezepte, echter Highscore.">
+<meta property="og:image" content="assets/img/cafe/tresen-tile-wall.webp">
+</head>
+<body>
+<div class="grain"></div>
+<div class="cursor-glow"></div>
+
+<header class="topbar">
+  <a class="brand magnetic" href="index.html"><img src="assets/img/logo.webp" alt="Coffee Brothers Logo"><span>Coffee Brothers</span></a>
+  <button class="hamb" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  <nav class="nav">
+    <a href="menu.html">Menü</a>
+    <a href="specials.html">Specials</a>
+    <a href="reservieren.html">Reservieren</a>
+    <a href="bestellen.html">Bestellen</a>
+    <a href="besuch.html">Besuch</a>
+    <a href="game.html">Game</a>
+  </nav>
+  <a class="pill wa" href="https://wa.me/4915567021202?text=Hi%20Coffee%20Brothers%2C%20ich%20habe%20eine%20Frage." target="_blank" rel="noopener">WhatsApp</a>
+</header>
+
+<main>
+<section class="game-section">
+
+  <!-- START SCREEN -->
+  <div class="game-screen" id="screenStart">
+    <p class="eyebrow">DAS COFFEE BROTHERS GAME</p>
+    <h1 class="game-title"><span>Barista</span> <span class="mint">Rush</span></h1>
+    <p class="lead game-lead">Die Morning Rush rollt an! Bereite echte Drinks von unserer Karte zu, kassiere Trinkgeld und mach den höchsten Tagesumsatz in Worms.</p>
+    <div class="game-howto">
+      <div><b>1</b><span>Lies die Bestellung auf dem Ticket</span></div>
+      <div><b>2</b><span>Tippe die Zutaten in der richtigen Reihenfolge</span></div>
+      <div><b>3</b><span>Serviere, bevor die Zeit abläuft — schnell = mehr Trinkgeld</span></div>
+    </div>
+    <p class="game-best" id="startBest"></p>
+    <div class="cta-row center">
+      <button class="pill primary big" id="btnStart">Schicht starten ☕</button>
+    </div>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div class="game-screen hidden" id="screenGame">
+    <div class="game-hud">
+      <div class="hud-box"><span class="hud-label">Tagesumsatz</span><b id="hudScore">0,00&nbsp;€</b></div>
+      <div class="hud-box center-box"><span class="hud-label">Combo</span><b id="hudCombo">×1</b></div>
+      <div class="hud-box right-box"><span class="hud-label">Leben</span><b id="hudLives">☕☕☕</b></div>
+    </div>
+
+    <div class="order-ticket" id="orderTicket">
+      <div class="ticket-head">
+        <span class="ticket-customer" id="ticketCustomer">Gast</span>
+        <span class="ticket-price" id="ticketPrice"></span>
+      </div>
+      <h2 class="ticket-drink" id="ticketDrink">—</h2>
+      <p class="ticket-desc" id="ticketDesc"></p>
+      <div class="ticket-recipe" id="ticketRecipe"></div>
+      <button class="ticket-peek hidden" id="btnPeek">🧾 Rezept spicken (−50 % Trinkgeld)</button>
+      <div class="time-track"><div class="time-bar" id="timeBar"></div></div>
+    </div>
+
+    <div class="cup-area">
+      <div class="steam-mini s1"></div>
+      <div class="steam-mini s2"></div>
+      <div class="cup" id="cup">
+        <div class="cup-layers" id="cupLayers"></div>
+      </div>
+      <div class="cup-saucer"></div>
+      <div class="cup-feedback" id="cupFeedback"></div>
+    </div>
+
+    <div class="ingredient-grid" id="ingredientGrid"></div>
+
+    <div class="game-actions">
+      <button class="pill" id="btnClear">↺ Wegkippen</button>
+      <button class="pill primary" id="btnServe">Servieren ✓</button>
+    </div>
+  </div>
+
+  <!-- GAME OVER SCREEN -->
+  <div class="game-screen hidden" id="screenOver">
+    <p class="eyebrow">FEIERABEND</p>
+    <h1 class="game-title"><span class="mint" id="overHeadline">Schicht beendet!</span></h1>
+    <div class="over-stats">
+      <div><span>Tagesumsatz</span><b id="overScore">0,00&nbsp;€</b></div>
+      <div><span>Drinks serviert</span><b id="overServed">0</b></div>
+      <div><span>Beste Combo</span><b id="overCombo">×1</b></div>
+    </div>
+    <p class="game-best" id="overBest"></p>
+    <p class="over-cta-text">Durstig geworden? Den echten Drink gibt's bei uns am Obermarkt. 😉</p>
+    <div class="cta-row center">
+      <button class="pill primary big" id="btnRestart">Nochmal ☕</button>
+      <button class="pill" id="btnShare">Score teilen</button>
+      <a class="pill" href="menu.html">Zum echten Menü</a>
+    </div>
+  </div>
+
+</section>
+</main>
+
+<footer class="footer">
+  <div><img src="assets/img/logo.webp" alt="" class="footer-logo"><p>Good Coffee.<br>Good People.<br>Good Vibes.</p></div>
+  <div><h4>Öffnungszeiten</h4><p>Mo–Do 09:00–20:00<br>Fr–Sa 09:00–22:00<br>So 12:00–18:00</p></div>
+  <div><h4>Besuch</h4><p>Obermarkt 8<br>67547 Worms</p><a href="https://maps.google.com/?q=Obermarkt%208%2067547%20Worms" target="_blank" rel="noopener">Maps öffnen →</a></div>
+  <div><h4>Rechtliches</h4><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+</footer>
+
+</body>
+</html>
