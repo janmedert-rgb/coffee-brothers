@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Brick Studio – 3D Lego-Baukasten</title>
+<meta name="description" content="Baue dein eigenes 3D-Lego-Modell im Browser: Steine stapeln, drehen, färben, speichern und als Bild exportieren." />
+<style>
+  :root {
+    --bg: #1d2433;
+    --panel: rgba(20, 26, 38, 0.92);
+    --panel-solid: #141a26;
+    --accent: #ffcf33;
+    --accent-2: #ff5a4d;
+    --text: #eef2f8;
+    --muted: #9aa7bd;
+    --border: rgba(255,255,255,0.10);
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; height: 100%; overflow: hidden; font-family: "Segoe UI", system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); }
+  #app { position: fixed; inset: 0; }
+  canvas { display: block; touch-action: none; }
+
+  /* ---- Top bar ---- */
+  #topbar {
+    position: fixed; top: 0; left: 0; right: 0; height: 52px;
+    display: flex; align-items: center; gap: 12px; padding: 0 14px;
+    background: var(--panel); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border); z-index: 20;
+  }
+  #topbar .logo { font-weight: 800; letter-spacing: .5px; font-size: 17px; }
+  #topbar .logo span { color: var(--accent); }
+  #topbar .stats { margin-left: auto; font-size: 13px; color: var(--muted); }
+  #topbar .stats b { color: var(--text); }
+
+  /* ---- Side panel ---- */
+  #panel {
+    position: fixed; top: 52px; left: 0; bottom: 0; width: 248px;
+    background: var(--panel); backdrop-filter: blur(8px);
+    border-right: 1px solid var(--border);
+    padding: 14px; overflow-y: auto; z-index: 15;
+    transition: transform .25s ease;
+  }
+  #panel.hidden { transform: translateX(-100%); }
+  .section { margin-bottom: 18px; }
+  .section h3 { margin: 0 0 8px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+
+  .swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+  .swatch { aspect-ratio: 1; border-radius: 6px; border: 2px solid transparent; cursor: pointer; position: relative; }
+  .swatch.active { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(255,207,51,.35); }
+
+  .grid-btns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .btn {
+    border: 1px solid var(--border); background: #222b3d; color: var(--text);
+    border-radius: 7px; padding: 8px 6px; font-size: 13px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    transition: background .15s, border-color .15s; user-select: none;
+  }
+  .btn:hover { background: #2c3650; }
+  .btn.active { background: var(--accent); color: #1a1f2b; border-color: var(--accent); font-weight: 700; }
+  .btn.wide { width: 100%; }
+  .btn.danger.active, .btn.danger:hover { background: var(--accent-2); color: #fff; border-color: var(--accent-2); }
+
+  .row { display: flex; gap: 6px; }
+  .row > * { flex: 1; }
+
+  .hint { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+  .hint kbd { background:#2c3650; border:1px solid var(--border); border-radius:4px; padding:1px 5px; font-size:11px; }
+
+  /* ---- Mobile toggle ---- */
+  #panelToggle {
+    position: fixed; left: 12px; bottom: 12px; z-index: 25; display: none;
+    width: 48px; height: 48px; border-radius: 50%; border: none;
+    background: var(--accent); color:#1a1f2b; font-size: 22px; cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,.4);
+  }
+
+  /* ---- Mobile build/place button ---- */
+  #placeBtn {
+    position: fixed; right: 14px; bottom: 14px; z-index: 25; display: none;
+    padding: 14px 22px; border-radius: 30px; border: none;
+    background: var(--accent); color:#1a1f2b; font-size: 16px; font-weight: 800; cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,.4);
+  }
+
+  #toast {
+    position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%) translateY(20px);
+    background: var(--panel-solid); border:1px solid var(--border); color: var(--text);
+    padding: 10px 18px; border-radius: 10px; font-size: 14px; z-index: 40;
+    opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s;
+  }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 760px) {
+    #panel { transform: translateX(-100%); width: 86%; max-width: 320px; }
+    #panel.open { transform: translateX(0); }
+    #panelToggle, #placeBtn { display: block; }
+    #topbar .stats { font-size: 11.5px; }
+  }
+  input[type=file] { display: none; }
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<div id="topbar">
+  <div class="logo">BRICK<span>STUDIO</span> 🧱</div>
+  <div class="stats">Steine: <b id="brickCount">0</b></div>
+</div>
+
+<aside id="panel">
+  <div class="section">
+    <h3>Farbe</h3>
+    <div class="swatches" id="swatches"></div>
+  </div>
+
+  <div class="section">
+    <h3>Steingröße (Noppen)</h3>
+    <div class="grid-btns" id="sizes"></div>
+  </div>
+
+  <div class="section">
+    <h3>Typ</h3>
+    <div class="row">
+      <button class="btn active" id="typeBrick">Stein</button>
+      <button class="btn" id="typePlate">Platte</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Werkzeug</h3>
+    <div class="row">
+      <button class="btn active" id="toolBuild">🔨 Bauen</button>
+      <button class="btn danger" id="toolDelete">🗑️ Löschen</button>
+    </div>
+    <div class="row" style="margin-top:6px">
+      <button class="btn" id="rotateBtn">↻ Drehen (R)</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Aktionen</h3>
+    <div class="row" style="margin-bottom:6px">
+      <button class="btn" id="undoBtn">↶ Zurück</button>
+      <button class="btn danger" id="clearBtn">Alles löschen</button>
+    </div>
+    <div class="row" style="margin-bottom:6px">
+      <button class="btn" id="saveBtn">💾 Speichern</button>
+      <button class="btn" id="loadBtn">📂 Laden</button>
+    </div>
+    <div class="row" style="margin-bottom:6px">
+      <button class="btn" id="exportImg">📷 Bild</button>
+      <button class="btn" id="exportModel">⬇ Datei</button>
+    </div>
+    <button class="btn wide" id="importBtn">⬆ Modell-Datei öffnen</button>
+    <input type="file" id="importFile" accept="application/json,.brick,.json" />
+  </div>
+
+  <div class="section">
+    <h3>Steuerung</h3>
+    <p class="hint">
+      <b>Drehen:</b> Maus ziehen / 1 Finger<br>
+      <b>Zoom:</b> Mausrad / 2 Finger<br>
+      <b>Bauen:</b> auf die Bauplatte klicken<br>
+      <kbd>R</kbd> Stein drehen · <kbd>Strg</kbd>+<kbd>Z</kbd> zurück · <kbd>Entf</kbd> Löschmodus
+    </p>
+  </div>
+</aside>
+
+<button id="panelToggle">☰</button>
+<button id="placeBtn">🔨 Setzen</button>
+<div id="toast"></div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+
+/* ============================================================
+   Brick Studio – 3D Lego-Baukasten
+   Einheiten: 1 Noppen-Raster = 1.0
+   ============================================================ */
+
+const GRID = 32;                 // Bauplatte: 32 x 32 Noppen
+const BRICK_H = 1.2;             // Höhe eines Steins
+const PLATE_H = 0.4;             // Höhe einer Platte (1/3 Stein)
+const STUD_R = 0.30;             // Noppen-Radius
+const STUD_H = 0.20;             // Noppen-Höhe
+const MAX_Y = 40;                // maximale Bauhöhe
+
+// ---- Farben (klassische Lego-Töne) ----
+const COLORS = [
+  ['Rot', '#c4281b'], ['Orange', '#fe8a18'], ['Gelb', '#f2cd37'],
+  ['Limette', '#bbe90b'], ['Grün', '#237841'], ['Türkis', '#069d9f'],
+  ['Hellblau', '#2aa9e0'], ['Blau', '#0055bf'], ['Lila', '#81007b'],
+  ['Pink', '#fc97ac'], ['Braun', '#582a12'], ['Beige', '#e4cd9e'],
+  ['Weiß', '#f4f4f4'], ['Hellgrau', '#9ba19d'], ['Schwarz', '#20262e'],
+];
+
+// ---- Verfügbare Steingrößen (Breite x Tiefe in Noppen) ----
+const SIZES = [
+  [1,1],[1,2],[1,3],[1,4],
+  [1,6],[1,8],[2,2],[2,3],
+  [2,4],[2,6],[2,8],[4,4],
+];
+
+// ============================================================
+//  Szene
+// ============================================================
+const app = document.getElementById('app');
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+app.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#aebfd6');
+scene.fog = new THREE.Fog('#aebfd6', 55, 110);
+
+const camera = new THREE.PerspectiveCamera(50, window.innerWidth/window.innerHeight, 0.1, 500);
+camera.position.set(GRID*0.85, GRID*0.95, GRID*1.15);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.08;
+controls.maxPolarAngle = Math.PI/2 - 0.02;   // nicht unter die Platte
+controls.minDistance = 6;
+controls.maxDistance = 120;
+controls.target.set(0, 2, 0);
+
+// ---- Licht ----
+scene.add(new THREE.HemisphereLight('#ffffff', '#6b7280', 0.85));
+const sun = new THREE.DirectionalLight('#fff6e0', 1.05);
+sun.position.set(GRID*0.7, GRID*1.4, GRID*0.5);
+sun.castShadow = true;
+sun.shadow.mapSize.set(2048, 2048);
+const sc = sun.shadow.camera;
+sc.left = -GRID; sc.right = GRID; sc.top = GRID; sc.bottom = -GRID;
+sc.near = 1; sc.far = 200;
+scene.add(sun);
+
+// ============================================================
+//  Bauwelt (lokale Koordinaten 0..GRID, zentriert im Ursprung)
+// ============================================================
+const world = new THREE.Group();
+world.position.set(-GRID/2, 0, -GRID/2);
+scene.add(world);
+
+// ---- Bauplatte ----
+function buildBaseplate() {
+  const geoms = [];
+  const plate = new THREE.BoxGeometry(GRID, 0.6, GRID);
+  plate.translate(GRID/2, -0.3, GRID/2);
+  geoms.push(plate);
+  for (let x = 0; x < GRID; x++) {
+    for (let z = 0; z < GRID; z++) {
+      const s = new THREE.CylinderGeometry(STUD_R, STUD_R, STUD_H, 12);
+      s.translate(x + 0.5, STUD_H/2, z + 0.5);
+      geoms.push(s);
+    }
+  }
+  const merged = mergeGeometries(geoms);
+  const mat = new THREE.MeshStandardMaterial({ color: '#7f8a93', roughness: 0.9, metalness: 0.0 });
+  const mesh = new THREE.Mesh(merged, mat);
+  mesh.receiveShadow = true;
+  mesh.name = 'baseplate';
+  world.add(mesh);
+  return mesh;
+}
+const baseplate = buildBaseplate();
+
+// ============================================================
+//  Stein-Geometrie
+// ============================================================
+const geoCache = new Map();
+function brickGeometry(w, d, h) {
+  const key = `${w}x${d}x${h}`;
+  if (geoCache.has(key)) return geoCache.get(key);
+  const geoms = [];
+  const body = new THREE.BoxGeometry(w, h, d);
+  body.translate(w/2, h/2, d/2);
+  geoms.push(body);
+  for (let i = 0; i < w; i++)
+    for (let j = 0; j < d; j++) {
+      const s = new THREE.CylinderGeometry(STUD_R, STUD_R, STUD_H, 14);
+      s.translate(i + 0.5, h + STUD_H/2, j + 0.5);
+      geoms.push(s);
+    }
+  const merged = mergeGeometries(geoms);
+  geoCache.set(key, merged);
+  return merged;
+}
+
+const edgeCache = new Map();
+function brickEdges(w, d, h) {
+  const key = `${w}x${d}x${h}`;
+  if (edgeCache.has(key)) return edgeCache.get(key);
+  const box = new THREE.BoxGeometry(w, h, d);
+  box.translate(w/2, h/2, d/2);
+  const eg = new THREE.EdgesGeometry(box);
+  edgeCache.set(key, eg);
+  return eg;
+}
+
+const edgeMat = new THREE.LineBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.18 });
+
+// ============================================================
+//  Zustand
+// ============================================================
+const bricks = [];               // { x, z, w, d, h, color, baseY, group, mesh }
+const undoStack = [];
+
+const state = {
+  color: COLORS[7][1],           // Blau
+  size: [2, 4],
+  height: BRICK_H,
+  rot: 0,                        // 0 oder 1 (vertauscht w/d)
+  tool: 'build',
+};
+
+function effSize() {
+  const [w, d] = state.size;
+  return state.rot ? [d, w] : [w, d];
+}
+
+// ---- Stein bauen ----
+function makeBrickMesh(b) {
+  const group = new THREE.Group();
+  const geo = brickGeometry(b.w, b.d, b.h);
+  const mat = new THREE.MeshStandardMaterial({ color: b.color, roughness: 0.55, metalness: 0.0 });
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.castShadow = true;
+  mesh.receiveShadow = true;
+  mesh.userData.brick = b;
+  group.add(mesh);
+  const edges = new THREE.LineSegments(brickEdges(b.w, b.d, b.h), edgeMat);
+  group.add(edges);
+  group.position.set(b.x, b.baseY, b.z);
+  b.group = group;
+  b.mesh = mesh;
+  return group;
+}
+
+function addBrick(b, recordUndo = true) {
+  world.add(makeBrickMesh(b));
+  bricks.push(b);
+  if (recordUndo) undoStack.push({ type: 'add', brick: b });
+  updateCount();
+}
+
+function removeBrick(b, recordUndo = true) {
+  const i = bricks.indexOf(b);
+  if (i === -1) return;
+  bricks.splice(i, 1);
+  world.remove(b.group);
+  if (recordUndo) undoStack.push({ type: 'remove', brick: b });
+  updateCount();
+}
+
+// ---- Stapelhöhe: oberste Kante aller überlappenden Steine ----
+function stackBase(x, z, w, d) {
+  let base = 0;
+  for (const b of bricks) {
+    const overlap = x < b.x + b.w && b.x < x + w && z < b.z + b.d && b.z < z + d;
+    if (overlap) base = Math.max(base, b.baseY + b.h);
+  }
+  return base;
+}
+
+// ============================================================
+//  Vorschau (Geist-Stein)
+// ============================================================
+let ghost = null;
+function rebuildGhost() {
+  if (ghost) world.remove(ghost);
+  const [w, d] = effSize();
+  const geo = brickGeometry(w, d, state.height);
+  const mat = new THREE.MeshStandardMaterial({
+    color: state.color, transparent: true, opacity: 0.45,
+    roughness: 0.5, depthWrite: false,
+  });
+  ghost = new THREE.Mesh(geo, mat);
+  ghost.visible = false;
+  world.add(ghost);
+}
+rebuildGhost();
+
+let ghostPos = null;             // { x, z, w, d, baseY } oder null
+
+const raycaster = new THREE.Raycaster();
+const pointer = new THREE.Vector2();
+
+function updateGhost(clientX, clientY) {
+  const rect = renderer.domElement.getBoundingClientRect();
+  pointer.x = ((clientX - rect.left) / rect.width) * 2 - 1;
+  pointer.y = -((clientY - rect.top) / rect.height) * 2 + 1;
+  raycaster.setFromCamera(pointer, camera);
+
+  const targets = [baseplate, ...bricks.map(b => b.mesh)];
+  const hits = raycaster.intersectObjects(targets, false);
+
+  if (state.tool === 'delete') {
+    ghost.visible = false;
+    ghostPos = null;
+    return;
+  }
+  if (!hits.length) { ghost.visible = false; ghostPos = null; return; }
+
+  const p = world.worldToLocal(hits[0].point.clone());
+  const [w, d] = effSize();
+  let gx = Math.round(p.x - w/2);
+  let gz = Math.round(p.z - d/2);
+  gx = Math.max(0, Math.min(GRID - w, gx));
+  gz = Math.max(0, Math.min(GRID - d, gz));
+  const baseY = stackBase(gx, gz, w, d);
+
+  if (baseY + state.height > MAX_Y) { ghost.visible = false; ghostPos = null; return; }
+
+  ghost.geometry = brickGeometry(w, d, state.height);
+  ghost.position.set(gx, baseY, gz);
+  ghost.visible = true;
+  ghostPos = { x: gx, z: gz, w, d, baseY };
+}
+
+function placeBrick() {
+  if (!ghostPos) return;
+  const b = {
+    x: ghostPos.x, z: ghostPos.z, w: ghostPos.w, d: ghostPos.d,
+    h: state.height, color: state.color, baseY: ghostPos.baseY,
+  };
+  addBrick(b);
+}
+
+function deleteAt(clientX, clientY) {
+  const rect = renderer.domElement.getBoundingClientRect();
+  pointer.x = ((clientX - rect.left) / rect.width) * 2 - 1;
+  pointer.y = -((clientY - rect.top) / rect.height) * 2 + 1;
+  raycaster.setFromCamera(pointer, camera);
+  const hits = raycaster.intersectObjects(bricks.map(b => b.mesh), false);
+  if (hits.length) removeBrick(hits[0].object.userData.brick);
+}
+
+// ============================================================
+//  Eingabe (Maus + Touch, Klick vs. Ziehen unterscheiden)
+// ============================================================
+const el = renderer.domElement;
+let downX = 0, downY = 0, moved = false, lastX = 0, lastY = 0;
+
+el.addEventListener('pointerdown', (e) => {
+  downX = lastX = e.clientX; downY = lastY = e.clientY; moved = false;
+});
+el.addEventListener('pointermove', (e) => {
+  lastX = e.clientX; lastY = e.clientY;
+  if (Math.hypot(e.clientX - downX, e.clientY - downY) > 6) moved = true;
+  updateGhost(e.clientX, e.clientY);
+});
+el.addEventListener('pointerup', (e) => {
+  if (moved) return;                       // war ein Dreh-/Zoom-Vorgang
+  if (state.tool === 'delete') deleteAt(e.clientX, e.clientY);
+  else { updateGhost(e.clientX, e.clientY); placeBrick(); }
+});
+el.addEventListener('pointerleave', () => { if (ghost) ghost.visible = false; });
+
+// Mobile-Knopf: Stein an aktueller Vorschau-Position setzen
+document.getElementById('placeBtn').addEventListener('click', () => {
+  if (state.tool === 'delete') { toast('Tippe einen Stein an zum Löschen'); return; }
+  // Vorschau in Bildmitte aktualisieren und setzen
+  const r = el.getBoundingClientRect();
+  updateGhost(r.left + r.width/2, r.top + r.height/2);
+  placeBrick();
+});
+
+// ============================================================
+//  Tastatur
+// ============================================================
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'r' || e.key === 'R') { state.rot ^= 1; rebuildGhost(); updateGhost(lastX, lastY); }
+  else if (e.key === 'Delete') setTool(state.tool === 'delete' ? 'build' : 'delete');
+  else if ((e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z')) { e.preventDefault(); undo(); }
+});
+
+function undo() {
+  const action = undoStack.pop();
+  if (!action) { toast('Nichts zum Rückgängigmachen'); return; }
+  if (action.type === 'add') removeBrick(action.brick, false);
+  else addBrick(action.brick, false);
+}
+
+// ============================================================
+//  UI
+// ============================================================
+const swatchWrap = document.getElementById('swatches');
+COLORS.forEach(([name, hex], i) => {
+  const s = document.createElement('div');
+  s.className = 'swatch' + (hex === state.color ? ' active' : '');
+  s.style.background = hex; s.title = name;
+  s.addEventListener('click', () => {
+    document.querySelectorAll('.swatch').forEach(n => n.classList.remove('active'));
+    s.classList.add('active');
+    state.color = hex; rebuildGhost(); updateGhost(lastX, lastY);
+  });
+  swatchWrap.appendChild(s);
+});
+
+const sizeWrap = document.getElementById('sizes');
+SIZES.forEach(([w, d], i) => {
+  const b = document.createElement('button');
+  b.className = 'btn' + (w === state.size[0] && d === state.size[1] ? ' active' : '');
+  b.textContent = `${w}×${d}`;
+  b.addEventListener('click', () => {
+    document.querySelectorAll('#sizes .btn').forEach(n => n.classList.remove('active'));
+    b.classList.add('active');
+    state.size = [w, d]; rebuildGhost(); updateGhost(lastX, lastY);
+  });
+  sizeWrap.appendChild(b);
+});
+
+const typeBrick = document.getElementById('typeBrick');
+const typePlate = document.getElementById('typePlate');
+typeBrick.addEventListener('click', () => {
+  state.height = BRICK_H; typeBrick.classList.add('active'); typePlate.classList.remove('active');
+  rebuildGhost(); updateGhost(lastX, lastY);
+});
+typePlate.addEventListener('click', () => {
+  state.height = PLATE_H; typePlate.classList.add('active'); typeBrick.classList.remove('active');
+  rebuildGhost(); updateGhost(lastX, lastY);
+});
+
+const toolBuild = document.getElementById('toolBuild');
+const toolDelete = document.getElementById('toolDelete');
+function setTool(t) {
+  state.tool = t;
+  toolBuild.classList.toggle('active', t === 'build');
+  toolDelete.classList.toggle('active', t === 'delete');
+  if (ghost) ghost.visible = false;
+}
+toolBuild.addEventListener('click', () => setTool('build'));
+toolDelete.addEventListener('click', () => setTool('delete'));
+
+document.getElementById('rotateBtn').addEventListener('click', () => {
+  state.rot ^= 1; rebuildGhost(); updateGhost(lastX, lastY);
+});
+document.getElementById('undoBtn').addEventListener('click', undo);
+document.getElementById('clearBtn').addEventListener('click', () => {
+  if (!bricks.length) return;
+  if (!confirm('Wirklich das ganze Modell löschen?')) return;
+  while (bricks.length) removeBrick(bricks[0], false);
+  undoStack.length = 0;
+  toast('Modell gelöscht');
+});
+
+// ---- Speichern / Laden (localStorage) ----
+const STORE_KEY = 'brickstudio_model';
+function serialize() {
+  return bricks.map(b => ({ x:b.x, z:b.z, w:b.w, d:b.d, h:b.h, c:b.color, y:b.baseY }));
+}
+function deserialize(data) {
+  while (bricks.length) removeBrick(bricks[0], false);
+  undoStack.length = 0;
+  data.forEach(d => addBrick({ x:d.x, z:d.z, w:d.w, d:d.d, h:d.h, color:d.c, baseY:d.y }, false));
+}
+document.getElementById('saveBtn').addEventListener('click', () => {
+  localStorage.setItem(STORE_KEY, JSON.stringify(serialize()));
+  toast('💾 Gespeichert (' + bricks.length + ' Steine)');
+});
+document.getElementById('loadBtn').addEventListener('click', () => {
+  const raw = localStorage.getItem(STORE_KEY);
+  if (!raw) { toast('Kein gespeichertes Modell gefunden'); return; }
+  try { deserialize(JSON.parse(raw)); toast('📂 Geladen'); }
+  catch { toast('Fehler beim Laden'); }
+});
+
+// ---- Export Bild ----
+document.getElementById('exportImg').addEventListener('click', () => {
+  if (ghost) ghost.visible = false;
+  renderer.render(scene, camera);
+  const url = renderer.domElement.toDataURL('image/png');
+  download(url, 'brick-modell.png');
+  toast('📷 Bild gespeichert');
+});
+
+// ---- Export / Import Modell-Datei ----
+document.getElementById('exportModel').addEventListener('click', () => {
+  const blob = new Blob([JSON.stringify(serialize())], { type: 'application/json' });
+  download(URL.createObjectURL(blob), 'modell.brick');
+  toast('⬇ Modell-Datei gespeichert');
+});
+const importFile = document.getElementById('importFile');
+document.getElementById('importBtn').addEventListener('click', () => importFile.click());
+importFile.addEventListener('change', (e) => {
+  const file = e.target.files[0]; if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try { deserialize(JSON.parse(reader.result)); toast('⬆ Modell geladen'); }
+    catch { toast('Ungültige Datei'); }
+  };
+  reader.readAsText(file);
+  importFile.value = '';
+});
+
+function download(url, name) {
+  const a = document.createElement('a');
+  a.href = url; a.download = name; a.click();
+}
+
+// ---- Mobile-Panel ----
+const panel = document.getElementById('panel');
+document.getElementById('panelToggle').addEventListener('click', () => panel.classList.toggle('open'));
+
+// ---- Hilfen ----
+function updateCount() { document.getElementById('brickCount').textContent = bricks.length; }
+let toastTimer;
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 1800);
+}
+
+// ---- Auto-Laden beim Start ----
+const saved = localStorage.getItem(STORE_KEY);
+if (saved) { try { deserialize(JSON.parse(saved)); } catch {} }
+
+// ============================================================
+//  Render-Schleife
+// ============================================================
+function onResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+window.addEventListener('resize', onResize);
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+animate();
+</script>
+</body>
+</html>
