@@ -21,6 +21,14 @@ Installation auf PC, Tablet und Handy.
 | Rückgängig | `Strg`/`Cmd` + `Z` |
 | Löschmodus | `Entf` |
 
+## Öffnen / Ausprobieren
+- **Per Doppelklick:** `lego/index.html` einfach im Browser öffnen – funktioniert
+  komplett offline (three.js liegt lokal im Ordner `vendor/`).
+- **Online:** nach dem Deploy unter `/lego/` erreichbar.
+
+> Wichtig: Der Ordner `lego/vendor/` muss neben `index.html` bleiben.
+
 ## Technik
-Reines HTML + JavaScript mit [three.js](https://threejs.org) (per CDN).
-Keine Build-Tools, keine Abhängigkeiten zu installieren – eine einzige Datei.
+Reines HTML + JavaScript mit [three.js](https://threejs.org). Die Bibliothek
+ist lokal eingebunden (`vendor/`), daher **keine Internetverbindung, kein
+Build-Schritt und keine Installation** nötig.

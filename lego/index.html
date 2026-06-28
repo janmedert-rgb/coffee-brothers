@@ -171,19 +171,14 @@
 <button id="placeBtn">🔨 Setzen</button>
 <div id="toast"></div>
 
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-  }
-}
-</script>
+<!-- three.js (klassische, globale Variante r137) – funktioniert auch per Doppelklick (file://) -->
+<script src="./vendor/three.min.js"></script>
+<script src="./vendor/OrbitControls.js"></script>
+<script src="./vendor/BufferGeometryUtils.js"></script>
 
-<script type="module">
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+<script>
+const OrbitControls = THREE.OrbitControls;
+const mergeGeometries = THREE.BufferGeometryUtils.mergeBufferGeometries;
 
 /* ============================================================
    Brick Studio – 3D Lego-Baukasten
@@ -220,6 +215,7 @@ const app = document.getElementById('app');
 const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.outputEncoding = THREE.sRGBEncoding;   // kräftige, korrekte Farben
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 app.appendChild(renderer.domElement);
