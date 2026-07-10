@@ -15,6 +15,13 @@
   "maler": "Maler",
   "dachdecker": "Dachdecker"
  },
+ "duenneDaten": [
+  "elektriker",
+  "shk",
+  "schreiner",
+  "maler",
+  "dachdecker"
+ ],
  "kreise": [
   {
    "rs": "07143",
@@ -1744,12 +1751,5 @@
     "dachdecker": 21
    }
   }
- ],
- "duenneDaten": [
-  "elektriker",
-  "shk",
-  "schreiner",
-  "maler",
-  "dachdecker"
  ]
 }

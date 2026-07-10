@@ -27,6 +27,13 @@
 .sa-tip table{border-collapse:collapse}
 .sa-tip td{padding:1px 0;font-size:.82rem;color:var(--cream)}
 .sa-tip td:first-child{opacity:.7;padding-right:14px}
+.sa-tip-hint{font-size:.75rem;opacity:.6;margin-top:5px}
+#sa-levels{margin-bottom:0}
+#sa-levels .sa-cat.active{background:var(--gold);border-color:var(--gold)}
+.sa-pop-wrap .leaflet-popup-content-wrapper,.sa-pop-wrap .leaflet-popup-tip{background:#0f2e26;color:var(--cream);border:1px solid var(--line)}
+.sa-pop h5{margin:0 0 4px;color:var(--mint);font-size:1rem}
+.sa-blist{margin:8px 0 0;padding-left:18px;max-height:180px;overflow-y:auto}
+.sa-blist li{margin:2px 0}
 .sa-legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:14px 0 6px;font-size:.85rem;color:var(--cream)}
 .sa-legend .lab{opacity:.75;margin:0 6px}
 .sa-swatch{width:34px;height:14px;border-radius:4px;display:inline-block}
@@ -65,8 +72,9 @@
 <section class="sa-wrap">
   <p class="eyebrow">Internes Tool</p>
   <h1>Standort-Analyse <span class="mint">Rheinland-Pfalz</span></h1>
-  <p class="sa-intro">Wo ist die Versorgungslücke am größten? Wähle eine Branche — Gastronomie, Handel oder Handwerk. Die Karte färbt jeden Landkreis danach ein, wie viele Einwohner sich einen Anbieter teilen müssen: je heller das Mint, desto weniger Angebot pro Kopf und desto größer die Chance für einen neuen Standort oder gezielte Dienstleistungen.</p>
+  <p class="sa-intro">Wo ist die Versorgungslücke am größten? Wähle eine Branche — Gastronomie, Handel oder Handwerk. Die Karte färbt jede Region danach ein, wie viele Einwohner sich einen Anbieter teilen müssen: je heller das Mint, desto weniger Angebot pro Kopf und desto größer die Chance. Auf Gemeinde-Ebene zeigt ein Klick die Liste der vorhandenen Betriebe.</p>
 
+  <div class="sa-controls" id="sa-levels" role="tablist" aria-label="Ebene wählen"></div>
   <div class="sa-controls" id="sa-cats" role="tablist" aria-label="Kategorie wählen"></div>
 
   <div id="sa-map" aria-label="Karte der Landkreise in Rheinland-Pfalz"></div>
