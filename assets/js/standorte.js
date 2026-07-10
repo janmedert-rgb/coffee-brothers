@@ -13,7 +13,7 @@
     fetch('data/standorte.json').then(r => r.json()),
   ]);
   const byRs = Object.fromEntries(data.kreise.map(k => [k.rs, k]));
-  let cat = Object.keys(data.kategorien)[0];
+  let cat = 'cafe' in data.kategorien ? 'cafe' : Object.keys(data.kategorien)[0];
 
   const fmt = n => n == null ? '–' : n.toLocaleString('de-DE');
   const color = s => s == null ? NODATA : RAMP[Math.min(4, Math.floor(s / 20))];
@@ -33,7 +33,7 @@
   // Coffee Brothers, Obermarkt 8, Worms
   const marker = L.circleMarker([49.6303, 8.3654], {
     radius: 7, color: SURFACE, weight: 2, fillColor: '#c69855', fillOpacity: 1,
-  }).addTo(map).bindTooltip('<div class="sa-tip"><h5>Coffee Brothers</h5>Obermarkt 8, Worms</div>', { className: 'sa-tip', opacity: 1 });
+  }).addTo(map).bindTooltip('<div class="sa-tip"><h5>Worms</h5>Euer Standort</div>', { className: 'sa-tip', opacity: 1 });
 
   function styleOf(f) {
     const k = byRs[f.properties.rs];
@@ -60,6 +60,7 @@
       cat = key;
       cats.querySelectorAll('.sa-cat').forEach(x => x.classList.toggle('active', x === b));
       layer.setStyle(styleOf);
+      updateNote();
       renderTable();
     };
     cats.appendChild(b);
@@ -72,9 +73,14 @@
     RAMP.map((c, i) => `<span class="sa-swatch" style="background:${c}" title="Score ${LAB[i]}"></span>`).join('') +
     '<span class="lab">größte Lücke&nbsp;→&nbsp;Chance</span>';
 
-  document.getElementById('sa-note').textContent =
-    `Lücken-Score = Einwohner je Anbieter, über alle 36 Kreise auf 0–100 normiert (100 = wenigste Anbieter pro Kopf in RLP). ` +
-    `Quellen: ${data.quellen}. Stand: ${data.generated}. Nachfrage-Signale (Suchvolumen, Kaufkraft) folgen in Ausbaustufe 2.`;
+  const sparse = new Set(data.duenneDaten || []);
+  function updateNote() {
+    document.getElementById('sa-note').textContent =
+      `Lücken-Score = Einwohner je Anbieter, über alle 36 Kreise auf 0–100 normiert (100 = wenigste Anbieter pro Kopf in RLP). ` +
+      `Quellen: ${data.quellen}. Stand: ${data.generated}. Nachfrage-Signale (Suchvolumen, Kaufkraft) folgen in Ausbaustufe 2.` +
+      (sparse.has(cat) ? ` ⚠ ${data.kategorien[cat]} sind in OpenStreetMap nur lückenhaft erfasst — das reale Angebot ist deutlich größer, Scores dieser Kategorie nur als grobe Tendenz lesen.` : '');
+  }
+  updateNote();
 
   // --- Ranking-Tabelle ---
   function renderTable() {

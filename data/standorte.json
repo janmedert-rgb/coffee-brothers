@@ -2,9 +2,18 @@
  "generated": "2026-07-10",
  "quellen": "OpenStreetMap (ODbL), Wikidata, GeoBasis-DE/BKG (dl-de/by-2-0)",
  "kategorien": {
+  "eis": "Eiscafés",
   "cafe": "Cafés",
   "bar": "Bars & Pubs",
-  "eis": "Eiscafés"
+  "baeckerei": "Bäckereien",
+  "metzgerei": "Metzgereien",
+  "friseur": "Friseure",
+  "kfz": "Kfz-Werkstätten",
+  "elektriker": "Elektriker",
+  "shk": "Sanitär & Heizung",
+  "schreiner": "Schreinereien",
+  "maler": "Maler",
+  "dachdecker": "Dachdecker"
  },
  "kreise": [
   {
@@ -13,19 +22,46 @@
    "typ": "Landkreis",
    "pop": 207803,
    "anbieter": {
+    "eis": 7,
     "cafe": 69,
     "bar": 57,
-    "eis": 7
+    "baeckerei": 77,
+    "metzgerei": 33,
+    "friseur": 69,
+    "kfz": 91,
+    "elektriker": 9,
+    "shk": 13,
+    "schreiner": 23,
+    "maler": 8,
+    "dachdecker": 10
    },
    "proAnbieter": {
+    "eis": 29686,
     "cafe": 3012,
     "bar": 3646,
-    "eis": 29686
+    "baeckerei": 2699,
+    "metzgerei": 6297,
+    "friseur": 3012,
+    "kfz": 2284,
+    "elektriker": 23089,
+    "shk": 15985,
+    "schreiner": 9035,
+    "maler": 25975,
+    "dachdecker": 20780
    },
    "score": {
+    "eis": 51,
     "cafe": 49,
     "bar": 63,
-    "eis": 51
+    "baeckerei": 41,
+    "metzgerei": 11,
+    "friseur": 35,
+    "kfz": 13,
+    "elektriker": 20,
+    "shk": 25,
+    "schreiner": 7,
+    "maler": 19,
+    "dachdecker": 8
    }
   },
   {
@@ -34,19 +70,46 @@
    "typ": "Kreisfreie Stadt",
    "pop": 112737,
    "anbieter": {
+    "eis": 14,
     "cafe": 50,
     "bar": 67,
-    "eis": 14
+    "baeckerei": 55,
+    "metzgerei": 10,
+    "friseur": 81,
+    "kfz": 29,
+    "elektriker": 5,
+    "shk": 7,
+    "schreiner": 4,
+    "maler": 3,
+    "dachdecker": 4
    },
    "proAnbieter": {
+    "eis": 8053,
     "cafe": 2255,
     "bar": 1683,
-    "eis": 8053
+    "baeckerei": 2050,
+    "metzgerei": 11274,
+    "friseur": 1392,
+    "kfz": 3887,
+    "elektriker": 22547,
+    "shk": 16105,
+    "schreiner": 28184,
+    "maler": 37579,
+    "dachdecker": 28184
    },
    "score": {
+    "eis": 1,
     "cafe": 30,
     "bar": 19,
-    "eis": 1
+    "baeckerei": 17,
+    "metzgerei": 32,
+    "friseur": 3,
+    "kfz": 52,
+    "elektriker": 19,
+    "shk": 26,
+    "schreiner": 26,
+    "maler": 29,
+    "dachdecker": 11
    }
   },
   {
@@ -55,19 +118,46 @@
    "typ": "Landkreis",
    "pop": 105566,
    "anbieter": {
+    "eis": 10,
     "cafe": 43,
     "bar": 36,
-    "eis": 10
+    "baeckerei": 36,
+    "metzgerei": 11,
+    "friseur": 20,
+    "kfz": 25,
+    "elektriker": 3,
+    "shk": 6,
+    "schreiner": 2,
+    "maler": 1,
+    "dachdecker": 4
    },
    "proAnbieter": {
+    "eis": 10557,
     "cafe": 2455,
     "bar": 2932,
-    "eis": 10557
+    "baeckerei": 2932,
+    "metzgerei": 9597,
+    "friseur": 5278,
+    "kfz": 4223,
+    "elektriker": 35189,
+    "shk": 17594,
+    "schreiner": 52783,
+    "maler": 105566,
+    "dachdecker": 26392
    },
    "score": {
+    "eis": 7,
     "cafe": 35,
     "bar": 47,
-    "eis": 7
+    "baeckerei": 49,
+    "metzgerei": 25,
+    "friseur": 80,
+    "kfz": 60,
+    "elektriker": 33,
+    "shk": 29,
+    "schreiner": 51,
+    "maler": 91,
+    "dachdecker": 11
    }
   },
   {
@@ -76,19 +166,46 @@
    "typ": "Kreisfreie Stadt",
    "pop": 53920,
    "anbieter": {
+    "eis": 6,
     "cafe": 35,
     "bar": 23,
-    "eis": 6
+    "baeckerei": 20,
+    "metzgerei": 2,
+    "friseur": 27,
+    "kfz": 16,
+    "elektriker": 2,
+    "shk": 5,
+    "schreiner": 3,
+    "maler": 1,
+    "dachdecker": 0
    },
    "proAnbieter": {
+    "eis": 8987,
     "cafe": 1541,
     "bar": 2344,
-    "eis": 8987
+    "baeckerei": 2696,
+    "metzgerei": 26960,
+    "friseur": 1997,
+    "kfz": 3370,
+    "elektriker": 26960,
+    "shk": 10784,
+    "schreiner": 17973,
+    "maler": 53920,
+    "dachdecker": 53920
    },
    "score": {
+    "eis": 3,
     "cafe": 12,
     "bar": 34,
-    "eis": 3
+    "baeckerei": 41,
+    "metzgerei": 100,
+    "friseur": 15,
+    "kfz": 39,
+    "elektriker": 24,
+    "shk": 14,
+    "schreiner": 16,
+    "maler": 44,
+    "dachdecker": 23
    }
   },
   {
@@ -97,19 +214,46 @@
    "typ": "Kreisfreie Stadt",
    "pop": 40941,
    "anbieter": {
+    "eis": 3,
     "cafe": 15,
     "bar": 9,
-    "eis": 3
+    "baeckerei": 13,
+    "metzgerei": 3,
+    "friseur": 11,
+    "kfz": 12,
+    "elektriker": 1,
+    "shk": 0,
+    "schreiner": 0,
+    "maler": 0,
+    "dachdecker": 1
    },
    "proAnbieter": {
+    "eis": 13647,
     "cafe": 2729,
     "bar": 4549,
-    "eis": 13647
+    "baeckerei": 3149,
+    "metzgerei": 13647,
+    "friseur": 3722,
+    "kfz": 3412,
+    "elektriker": 40941,
+    "shk": 40941,
+    "schreiner": 40941,
+    "maler": 40941,
+    "dachdecker": 40941
    },
    "score": {
+    "eis": 14,
     "cafe": 41,
     "bar": 84,
-    "eis": 14
+    "baeckerei": 57,
+    "metzgerei": 42,
+    "friseur": 49,
+    "kfz": 40,
+    "elektriker": 40,
+    "shk": 79,
+    "schreiner": 39,
+    "maler": 32,
+    "dachdecker": 17
    }
   },
   {
@@ -118,19 +262,46 @@
    "typ": "Landkreis",
    "pop": 115083,
    "anbieter": {
+    "eis": 9,
     "cafe": 81,
     "bar": 69,
-    "eis": 9
+    "baeckerei": 46,
+    "metzgerei": 22,
+    "friseur": 47,
+    "kfz": 45,
+    "elektriker": 9,
+    "shk": 7,
+    "schreiner": 12,
+    "maler": 0,
+    "dachdecker": 3
    },
    "proAnbieter": {
+    "eis": 12787,
     "cafe": 1421,
     "bar": 1668,
-    "eis": 12787
+    "baeckerei": 2502,
+    "metzgerei": 5231,
+    "friseur": 2449,
+    "kfz": 2557,
+    "elektriker": 12787,
+    "shk": 16440,
+    "schreiner": 9590,
+    "maler": 115083,
+    "dachdecker": 38361
    },
    "score": {
+    "eis": 12,
     "cafe": 9,
     "bar": 19,
-    "eis": 12
+    "baeckerei": 34,
+    "metzgerei": 6,
+    "friseur": 24,
+    "kfz": 19,
+    "elektriker": 8,
+    "shk": 26,
+    "schreiner": 7,
+    "maler": 100,
+    "dachdecker": 16
    }
   },
   {
@@ -139,19 +310,46 @@
    "typ": "Landkreis",
    "pop": 133004,
    "anbieter": {
+    "eis": 15,
     "cafe": 50,
     "bar": 51,
-    "eis": 15
+    "baeckerei": 54,
+    "metzgerei": 25,
+    "friseur": 50,
+    "kfz": 32,
+    "elektriker": 4,
+    "shk": 12,
+    "schreiner": 13,
+    "maler": 5,
+    "dachdecker": 2
    },
    "proAnbieter": {
+    "eis": 8867,
     "cafe": 2660,
     "bar": 2608,
-    "eis": 8867
+    "baeckerei": 2463,
+    "metzgerei": 5320,
+    "friseur": 2660,
+    "kfz": 4156,
+    "elektriker": 33251,
+    "shk": 11084,
+    "schreiner": 10231,
+    "maler": 26601,
+    "dachdecker": 66502
    },
    "score": {
+    "eis": 3,
     "cafe": 40,
     "bar": 40,
-    "eis": 3
+    "baeckerei": 32,
+    "metzgerei": 6,
+    "friseur": 28,
+    "kfz": 58,
+    "elektriker": 31,
+    "shk": 15,
+    "schreiner": 8,
+    "maler": 19,
+    "dachdecker": 29
    }
   },
   {
@@ -160,19 +358,46 @@
    "typ": "Landkreis",
    "pop": 61587,
    "anbieter": {
+    "eis": 8,
     "cafe": 57,
     "bar": 73,
-    "eis": 8
+    "baeckerei": 39,
+    "metzgerei": 16,
+    "friseur": 44,
+    "kfz": 35,
+    "elektriker": 11,
+    "shk": 15,
+    "schreiner": 24,
+    "maler": 11,
+    "dachdecker": 19
    },
    "proAnbieter": {
+    "eis": 7698,
     "cafe": 1080,
     "bar": 844,
-    "eis": 7698
+    "baeckerei": 1579,
+    "metzgerei": 3849,
+    "friseur": 1400,
+    "kfz": 1760,
+    "elektriker": 5599,
+    "shk": 4106,
+    "schreiner": 2566,
+    "maler": 5599,
+    "dachdecker": 3241
    },
    "score": {
+    "eis": 0,
     "cafe": 0,
     "bar": 0,
-    "eis": 0
+    "baeckerei": 0,
+    "metzgerei": 0,
+    "friseur": 3,
+    "kfz": 0,
+    "elektriker": 0,
+    "shk": 0,
+    "schreiner": 0,
+    "maler": 0,
+    "dachdecker": 0
    }
   },
   {
@@ -181,19 +406,46 @@
    "typ": "Kreisfreie Stadt",
    "pop": 48341,
    "anbieter": {
+    "eis": 5,
     "cafe": 33,
     "bar": 39,
-    "eis": 5
+    "baeckerei": 26,
+    "metzgerei": 2,
+    "friseur": 23,
+    "kfz": 17,
+    "elektriker": 0,
+    "shk": 4,
+    "schreiner": 1,
+    "maler": 0,
+    "dachdecker": 0
    },
    "proAnbieter": {
+    "eis": 9668,
     "cafe": 1465,
     "bar": 1240,
-    "eis": 9668
+    "baeckerei": 1859,
+    "metzgerei": 24171,
+    "friseur": 2102,
+    "kfz": 2844,
+    "elektriker": 48341,
+    "shk": 12085,
+    "schreiner": 48341,
+    "maler": 48341,
+    "dachdecker": 48341
    },
    "score": {
+    "eis": 5,
     "cafe": 10,
     "bar": 9,
-    "eis": 5
+    "baeckerei": 10,
+    "metzgerei": 88,
+    "friseur": 17,
+    "kfz": 26,
+    "elektriker": 48,
+    "shk": 17,
+    "schreiner": 46,
+    "maler": 39,
+    "dachdecker": 21
    }
   },
   {
@@ -202,19 +454,46 @@
    "typ": "Kreisfreie Stadt",
    "pop": 115298,
    "anbieter": {
+    "eis": 8,
     "cafe": 63,
     "bar": 62,
-    "eis": 8
+    "baeckerei": 48,
+    "metzgerei": 13,
+    "friseur": 55,
+    "kfz": 31,
+    "elektriker": 2,
+    "shk": 9,
+    "schreiner": 2,
+    "maler": 2,
+    "dachdecker": 4
    },
    "proAnbieter": {
+    "eis": 14412,
     "cafe": 1830,
     "bar": 1860,
-    "eis": 14412
+    "baeckerei": 2402,
+    "metzgerei": 8869,
+    "friseur": 2096,
+    "kfz": 3719,
+    "elektriker": 57649,
+    "shk": 12811,
+    "schreiner": 57649,
+    "maler": 57649,
+    "dachdecker": 28825
    },
    "score": {
+    "eis": 16,
     "cafe": 19,
     "bar": 23,
-    "eis": 16
+    "baeckerei": 30,
+    "metzgerei": 22,
+    "friseur": 17,
+    "kfz": 48,
+    "elektriker": 58,
+    "shk": 19,
+    "schreiner": 56,
+    "maler": 48,
+    "dachdecker": 12
    }
   },
   {
@@ -223,19 +502,46 @@
    "typ": "Landkreis",
    "pop": 188851,
    "anbieter": {
+    "eis": 10,
     "cafe": 59,
     "bar": 55,
-    "eis": 10
+    "baeckerei": 70,
+    "metzgerei": 24,
+    "friseur": 53,
+    "kfz": 62,
+    "elektriker": 5,
+    "shk": 17,
+    "schreiner": 23,
+    "maler": 3,
+    "dachdecker": 6
    },
    "proAnbieter": {
+    "eis": 18885,
     "cafe": 3201,
     "bar": 3434,
-    "eis": 18885
+    "baeckerei": 2698,
+    "metzgerei": 7869,
+    "friseur": 3563,
+    "kfz": 3046,
+    "elektriker": 37770,
+    "shk": 11109,
+    "schreiner": 8211,
+    "maler": 62950,
+    "dachdecker": 31475
    },
    "score": {
+    "eis": 26,
     "cafe": 53,
     "bar": 59,
-    "eis": 26
+    "baeckerei": 41,
+    "metzgerei": 17,
+    "friseur": 46,
+    "kfz": 31,
+    "elektriker": 36,
+    "shk": 15,
+    "schreiner": 6,
+    "maler": 52,
+    "dachdecker": 13
    }
   },
   {
@@ -244,19 +550,46 @@
    "typ": "Landkreis",
    "pop": 132536,
    "anbieter": {
+    "eis": 6,
     "cafe": 30,
     "bar": 39,
-    "eis": 6
+    "baeckerei": 51,
+    "metzgerei": 16,
+    "friseur": 48,
+    "kfz": 48,
+    "elektriker": 8,
+    "shk": 15,
+    "schreiner": 15,
+    "maler": 5,
+    "dachdecker": 4
    },
    "proAnbieter": {
+    "eis": 22089,
     "cafe": 4418,
     "bar": 3398,
-    "eis": 22089
+    "baeckerei": 2599,
+    "metzgerei": 8284,
+    "friseur": 2761,
+    "kfz": 2761,
+    "elektriker": 16567,
+    "shk": 8836,
+    "schreiner": 8836,
+    "maler": 26507,
+    "dachdecker": 33134
    },
    "score": {
+    "eis": 33,
     "cafe": 84,
     "bar": 58,
-    "eis": 33
+    "baeckerei": 37,
+    "metzgerei": 19,
+    "friseur": 30,
+    "kfz": 24,
+    "elektriker": 12,
+    "shk": 10,
+    "schreiner": 6,
+    "maler": 19,
+    "dachdecker": 14
    }
   },
   {
@@ -265,19 +598,46 @@
    "typ": "Kreisfreie Stadt",
    "pop": 222889,
    "anbieter": {
+    "eis": 23,
     "cafe": 92,
     "bar": 121,
-    "eis": 23
+    "baeckerei": 99,
+    "metzgerei": 17,
+    "friseur": 156,
+    "kfz": 52,
+    "elektriker": 3,
+    "shk": 13,
+    "schreiner": 8,
+    "maler": 6,
+    "dachdecker": 1
    },
    "proAnbieter": {
+    "eis": 9691,
     "cafe": 2423,
     "bar": 1842,
-    "eis": 9691
+    "baeckerei": 2251,
+    "metzgerei": 13111,
+    "friseur": 1429,
+    "kfz": 4286,
+    "elektriker": 74296,
+    "shk": 17145,
+    "schreiner": 27861,
+    "maler": 37148,
+    "dachdecker": 222889
    },
    "score": {
+    "eis": 5,
     "cafe": 34,
     "bar": 23,
-    "eis": 5
+    "baeckerei": 24,
+    "metzgerei": 40,
+    "friseur": 4,
+    "kfz": 62,
+    "elektriker": 77,
+    "shk": 28,
+    "schreiner": 26,
+    "maler": 29,
+    "dachdecker": 100
    }
   },
   {
@@ -286,19 +646,46 @@
    "typ": "Landkreis",
    "pop": 75203,
    "anbieter": {
+    "eis": 3,
     "cafe": 17,
     "bar": 29,
-    "eis": 3
+    "baeckerei": 23,
+    "metzgerei": 16,
+    "friseur": 27,
+    "kfz": 36,
+    "elektriker": 4,
+    "shk": 2,
+    "schreiner": 6,
+    "maler": 1,
+    "dachdecker": 0
    },
    "proAnbieter": {
+    "eis": 25068,
     "cafe": 4424,
     "bar": 2593,
-    "eis": 25068
+    "baeckerei": 3270,
+    "metzgerei": 4700,
+    "friseur": 2785,
+    "kfz": 2089,
+    "elektriker": 18801,
+    "shk": 37602,
+    "schreiner": 12534,
+    "maler": 75203,
+    "dachdecker": 75203
    },
    "score": {
+    "eis": 40,
     "cafe": 84,
     "bar": 40,
-    "eis": 40
+    "baeckerei": 62,
+    "metzgerei": 4,
+    "friseur": 31,
+    "kfz": 8,
+    "elektriker": 15,
+    "shk": 72,
+    "schreiner": 10,
+    "maler": 64,
+    "dachdecker": 33
    }
   },
   {
@@ -307,19 +694,46 @@
    "typ": "Kreisfreie Stadt",
    "pop": 34613,
    "anbieter": {
+    "eis": 2,
     "cafe": 10,
     "bar": 16,
-    "eis": 2
+    "baeckerei": 8,
+    "metzgerei": 4,
+    "friseur": 11,
+    "kfz": 14,
+    "elektriker": 3,
+    "shk": 4,
+    "schreiner": 3,
+    "maler": 1,
+    "dachdecker": 0
    },
    "proAnbieter": {
+    "eis": 17307,
     "cafe": 3461,
     "bar": 2163,
-    "eis": 17307
+    "baeckerei": 4327,
+    "metzgerei": 8653,
+    "friseur": 3147,
+    "kfz": 2472,
+    "elektriker": 11538,
+    "shk": 8653,
+    "schreiner": 11538,
+    "maler": 34613,
+    "dachdecker": 34613
    },
    "score": {
+    "eis": 22,
     "cafe": 60,
     "bar": 30,
-    "eis": 22
+    "baeckerei": 100,
+    "metzgerei": 21,
+    "friseur": 38,
+    "kfz": 17,
+    "elektriker": 7,
+    "shk": 10,
+    "schreiner": 9,
+    "maler": 27,
+    "dachdecker": 14
    }
   },
   {
@@ -328,19 +742,46 @@
    "typ": "Landkreis",
    "pop": 164748,
    "anbieter": {
+    "eis": 19,
     "cafe": 57,
     "bar": 48,
-    "eis": 19
+    "baeckerei": 66,
+    "metzgerei": 18,
+    "friseur": 49,
+    "kfz": 59,
+    "elektriker": 5,
+    "shk": 7,
+    "schreiner": 9,
+    "maler": 2,
+    "dachdecker": 3
    },
    "proAnbieter": {
+    "eis": 8671,
     "cafe": 2890,
     "bar": 3432,
-    "eis": 8671
+    "baeckerei": 2496,
+    "metzgerei": 9153,
+    "friseur": 3362,
+    "kfz": 2792,
+    "elektriker": 32950,
+    "shk": 23535,
+    "schreiner": 18305,
+    "maler": 82374,
+    "dachdecker": 54916
    },
    "score": {
+    "eis": 2,
     "cafe": 46,
     "bar": 59,
-    "eis": 2
+    "baeckerei": 33,
+    "metzgerei": 23,
+    "friseur": 42,
+    "kfz": 25,
+    "elektriker": 31,
+    "shk": 42,
+    "schreiner": 16,
+    "maler": 70,
+    "dachdecker": 24
    }
   },
   {
@@ -349,19 +790,46 @@
    "typ": "Landkreis",
    "pop": 129353,
    "anbieter": {
+    "eis": 16,
     "cafe": 57,
     "bar": 53,
-    "eis": 16
+    "baeckerei": 55,
+    "metzgerei": 14,
+    "friseur": 48,
+    "kfz": 60,
+    "elektriker": 6,
+    "shk": 18,
+    "schreiner": 19,
+    "maler": 7,
+    "dachdecker": 12
    },
    "proAnbieter": {
+    "eis": 8085,
     "cafe": 2269,
     "bar": 2441,
-    "eis": 8085
+    "baeckerei": 2352,
+    "metzgerei": 9240,
+    "friseur": 2695,
+    "kfz": 2156,
+    "elektriker": 21559,
+    "shk": 7186,
+    "schreiner": 6808,
+    "maler": 18479,
+    "dachdecker": 10779
    },
    "score": {
+    "eis": 1,
     "cafe": 30,
     "bar": 36,
-    "eis": 1
+    "baeckerei": 28,
+    "metzgerei": 23,
+    "friseur": 29,
+    "kfz": 10,
+    "elektriker": 18,
+    "shk": 7,
+    "schreiner": 4,
+    "maler": 12,
+    "dachdecker": 3
    }
   },
   {
@@ -370,19 +838,46 @@
    "typ": "Landkreis",
    "pop": 94831,
    "anbieter": {
+    "eis": 2,
     "cafe": 21,
     "bar": 28,
-    "eis": 2
+    "baeckerei": 37,
+    "metzgerei": 15,
+    "friseur": 22,
+    "kfz": 29,
+    "elektriker": 1,
+    "shk": 9,
+    "schreiner": 8,
+    "maler": 2,
+    "dachdecker": 3
    },
    "proAnbieter": {
+    "eis": 47416,
     "cafe": 4516,
     "bar": 3387,
-    "eis": 47416
+    "baeckerei": 2563,
+    "metzgerei": 6322,
+    "friseur": 4311,
+    "kfz": 3270,
+    "elektriker": 94831,
+    "shk": 10537,
+    "schreiner": 11854,
+    "maler": 47416,
+    "dachdecker": 31610
    },
    "score": {
+    "eis": 92,
     "cafe": 86,
     "bar": 58,
-    "eis": 92
+    "baeckerei": 36,
+    "metzgerei": 11,
+    "friseur": 61,
+    "kfz": 37,
+    "elektriker": 100,
+    "shk": 14,
+    "schreiner": 9,
+    "maler": 38,
+    "dachdecker": 13
    }
   },
   {
@@ -391,19 +886,46 @@
    "typ": "Landkreis",
    "pop": 81760,
    "anbieter": {
+    "eis": 4,
     "cafe": 24,
     "bar": 51,
-    "eis": 4
+    "baeckerei": 34,
+    "metzgerei": 14,
+    "friseur": 23,
+    "kfz": 19,
+    "elektriker": 1,
+    "shk": 3,
+    "schreiner": 2,
+    "maler": 1,
+    "dachdecker": 0
    },
    "proAnbieter": {
+    "eis": 20440,
     "cafe": 3407,
     "bar": 1603,
-    "eis": 20440
+    "baeckerei": 2405,
+    "metzgerei": 5840,
+    "friseur": 3555,
+    "kfz": 4303,
+    "elektriker": 81760,
+    "shk": 27253,
+    "schreiner": 40880,
+    "maler": 81760,
+    "dachdecker": 81760
    },
    "score": {
+    "eis": 30,
     "cafe": 59,
     "bar": 17,
-    "eis": 30
+    "baeckerei": 30,
+    "metzgerei": 9,
+    "friseur": 46,
+    "kfz": 62,
+    "elektriker": 85,
+    "shk": 50,
+    "schreiner": 39,
+    "maler": 70,
+    "dachdecker": 36
    }
   },
   {
@@ -412,19 +934,46 @@
    "typ": "Landkreis",
    "pop": 153814,
    "anbieter": {
+    "eis": 5,
     "cafe": 35,
     "bar": 57,
-    "eis": 5
+    "baeckerei": 59,
+    "metzgerei": 28,
+    "friseur": 69,
+    "kfz": 61,
+    "elektriker": 11,
+    "shk": 18,
+    "schreiner": 37,
+    "maler": 7,
+    "dachdecker": 11
    },
    "proAnbieter": {
+    "eis": 30763,
     "cafe": 4395,
     "bar": 2698,
-    "eis": 30763
+    "baeckerei": 2607,
+    "metzgerei": 5493,
+    "friseur": 2229,
+    "kfz": 2522,
+    "elektriker": 13983,
+    "shk": 8545,
+    "schreiner": 4157,
+    "maler": 21973,
+    "dachdecker": 13983
    },
    "score": {
+    "eis": 54,
     "cafe": 83,
     "bar": 42,
-    "eis": 54
+    "baeckerei": 37,
+    "metzgerei": 7,
+    "friseur": 20,
+    "kfz": 19,
+    "elektriker": 9,
+    "shk": 10,
+    "schreiner": 2,
+    "maler": 15,
+    "dachdecker": 5
    }
   },
   {
@@ -433,19 +982,46 @@
    "typ": "Kreisfreie Stadt",
    "pop": 51203,
    "anbieter": {
+    "eis": 6,
     "cafe": 31,
     "bar": 28,
-    "eis": 6
+    "baeckerei": 28,
+    "metzgerei": 2,
+    "friseur": 40,
+    "kfz": 10,
+    "elektriker": 2,
+    "shk": 2,
+    "schreiner": 1,
+    "maler": 3,
+    "dachdecker": 1
    },
    "proAnbieter": {
+    "eis": 8534,
     "cafe": 1652,
     "bar": 1829,
-    "eis": 8534
+    "baeckerei": 1829,
+    "metzgerei": 25602,
+    "friseur": 1280,
+    "kfz": 5120,
+    "elektriker": 25602,
+    "shk": 25602,
+    "schreiner": 51203,
+    "maler": 17068,
+    "dachdecker": 51203
    },
    "score": {
+    "eis": 2,
     "cafe": 14,
     "bar": 22,
-    "eis": 2
+    "baeckerei": 9,
+    "metzgerei": 94,
+    "friseur": 1,
+    "kfz": 82,
+    "elektriker": 22,
+    "shk": 46,
+    "schreiner": 49,
+    "maler": 10,
+    "dachdecker": 22
    }
   },
   {
@@ -454,19 +1030,46 @@
    "typ": "Landkreis",
    "pop": 60777,
    "anbieter": {
+    "eis": 5,
     "cafe": 34,
     "bar": 21,
-    "eis": 5
+    "baeckerei": 30,
+    "metzgerei": 13,
+    "friseur": 21,
+    "kfz": 29,
+    "elektriker": 5,
+    "shk": 3,
+    "schreiner": 9,
+    "maler": 4,
+    "dachdecker": 5
    },
    "proAnbieter": {
+    "eis": 12155,
     "cafe": 1788,
     "bar": 2894,
-    "eis": 12155
+    "baeckerei": 2026,
+    "metzgerei": 4675,
+    "friseur": 2894,
+    "kfz": 2096,
+    "elektriker": 12155,
+    "shk": 20259,
+    "schreiner": 6753,
+    "maler": 15194,
+    "dachdecker": 12155
    },
    "score": {
+    "eis": 10,
     "cafe": 18,
     "bar": 46,
-    "eis": 10
+    "baeckerei": 16,
+    "metzgerei": 4,
+    "friseur": 33,
+    "kfz": 8,
+    "elektriker": 7,
+    "shk": 35,
+    "schreiner": 4,
+    "maler": 9,
+    "dachdecker": 4
    }
   },
   {
@@ -475,19 +1078,46 @@
    "typ": "Landkreis",
    "pop": 105504,
    "anbieter": {
+    "eis": 5,
     "cafe": 32,
     "bar": 33,
-    "eis": 5
+    "baeckerei": 44,
+    "metzgerei": 18,
+    "friseur": 46,
+    "kfz": 33,
+    "elektriker": 4,
+    "shk": 10,
+    "schreiner": 2,
+    "maler": 3,
+    "dachdecker": 4
    },
    "proAnbieter": {
+    "eis": 21101,
     "cafe": 3297,
     "bar": 3197,
-    "eis": 21101
+    "baeckerei": 2398,
+    "metzgerei": 5861,
+    "friseur": 2294,
+    "kfz": 3197,
+    "elektriker": 26376,
+    "shk": 10550,
+    "schreiner": 52752,
+    "maler": 35168,
+    "dachdecker": 26376
    },
    "score": {
+    "eis": 31,
     "cafe": 56,
     "bar": 53,
-    "eis": 31
+    "baeckerei": 30,
+    "metzgerei": 9,
+    "friseur": 21,
+    "kfz": 35,
+    "elektriker": 23,
+    "shk": 14,
+    "schreiner": 51,
+    "maler": 27,
+    "dachdecker": 11
    }
   },
   {
@@ -496,19 +1126,46 @@
    "typ": "Kreisfreie Stadt",
    "pop": 85609,
    "anbieter": {
+    "eis": 9,
     "cafe": 34,
     "bar": 25,
-    "eis": 9
+    "baeckerei": 31,
+    "metzgerei": 11,
+    "friseur": 51,
+    "kfz": 19,
+    "elektriker": 1,
+    "shk": 10,
+    "schreiner": 0,
+    "maler": 1,
+    "dachdecker": 1
    },
    "proAnbieter": {
+    "eis": 9512,
     "cafe": 2518,
     "bar": 3424,
-    "eis": 9512
+    "baeckerei": 2762,
+    "metzgerei": 7783,
+    "friseur": 1679,
+    "kfz": 4506,
+    "elektriker": 85609,
+    "shk": 8561,
+    "schreiner": 85609,
+    "maler": 85609,
+    "dachdecker": 85609
    },
    "score": {
+    "eis": 4,
     "cafe": 36,
     "bar": 58,
-    "eis": 4
+    "baeckerei": 43,
+    "metzgerei": 17,
+    "friseur": 9,
+    "kfz": 67,
+    "elektriker": 90,
+    "shk": 10,
+    "schreiner": 84,
+    "maler": 73,
+    "dachdecker": 38
    }
   },
   {
@@ -517,19 +1174,46 @@
    "typ": "Landkreis",
    "pop": 218210,
    "anbieter": {
+    "eis": 10,
     "cafe": 63,
     "bar": 65,
-    "eis": 10
+    "baeckerei": 84,
+    "metzgerei": 23,
+    "friseur": 70,
+    "kfz": 63,
+    "elektriker": 6,
+    "shk": 24,
+    "schreiner": 5,
+    "maler": 4,
+    "dachdecker": 6
    },
    "proAnbieter": {
+    "eis": 21821,
     "cafe": 3464,
     "bar": 3357,
-    "eis": 21821
+    "baeckerei": 2598,
+    "metzgerei": 9487,
+    "friseur": 3117,
+    "kfz": 3464,
+    "elektriker": 36368,
+    "shk": 9092,
+    "schreiner": 43642,
+    "maler": 54553,
+    "dachdecker": 36368
    },
    "score": {
+    "eis": 33,
     "cafe": 60,
     "bar": 57,
-    "eis": 33
+    "baeckerei": 37,
+    "metzgerei": 24,
+    "friseur": 37,
+    "kfz": 41,
+    "elektriker": 34,
+    "shk": 11,
+    "schreiner": 42,
+    "maler": 45,
+    "dachdecker": 15
    }
   },
   {
@@ -538,19 +1222,46 @@
    "typ": "Landkreis",
    "pop": 124381,
    "anbieter": {
+    "eis": 6,
     "cafe": 52,
     "bar": 40,
-    "eis": 6
+    "baeckerei": 47,
+    "metzgerei": 11,
+    "friseur": 43,
+    "kfz": 37,
+    "elektriker": 4,
+    "shk": 5,
+    "schreiner": 16,
+    "maler": 6,
+    "dachdecker": 2
    },
    "proAnbieter": {
+    "eis": 20730,
     "cafe": 2392,
     "bar": 3110,
-    "eis": 20730
+    "baeckerei": 2646,
+    "metzgerei": 11307,
+    "friseur": 2893,
+    "kfz": 3362,
+    "elektriker": 31095,
+    "shk": 24876,
+    "schreiner": 7774,
+    "maler": 20730,
+    "dachdecker": 62191
    },
    "score": {
+    "eis": 30,
     "cafe": 33,
     "bar": 51,
-    "eis": 30
+    "baeckerei": 39,
+    "metzgerei": 32,
+    "friseur": 33,
+    "kfz": 39,
+    "elektriker": 29,
+    "shk": 45,
+    "schreiner": 5,
+    "maler": 14,
+    "dachdecker": 27
    }
   },
   {
@@ -559,19 +1270,46 @@
    "typ": "Landkreis",
    "pop": 71462,
    "anbieter": {
+    "eis": 5,
     "cafe": 18,
     "bar": 40,
-    "eis": 5
+    "baeckerei": 31,
+    "metzgerei": 12,
+    "friseur": 23,
+    "kfz": 27,
+    "elektriker": 2,
+    "shk": 5,
+    "schreiner": 5,
+    "maler": 0,
+    "dachdecker": 2
    },
    "proAnbieter": {
+    "eis": 14292,
     "cafe": 3970,
     "bar": 1787,
-    "eis": 14292
+    "baeckerei": 2305,
+    "metzgerei": 5955,
+    "friseur": 3107,
+    "kfz": 2647,
+    "elektriker": 35731,
+    "shk": 14292,
+    "schreiner": 14292,
+    "maler": 71462,
+    "dachdecker": 35731
    },
    "score": {
+    "eis": 15,
     "cafe": 73,
     "bar": 21,
-    "eis": 15
+    "baeckerei": 26,
+    "metzgerei": 9,
+    "friseur": 37,
+    "kfz": 22,
+    "elektriker": 34,
+    "shk": 22,
+    "schreiner": 12,
+    "maler": 60,
+    "dachdecker": 15
    }
   },
   {
@@ -580,19 +1318,46 @@
    "typ": "Landkreis",
    "pop": 217986,
    "anbieter": {
+    "eis": 15,
     "cafe": 55,
     "bar": 53,
-    "eis": 15
+    "baeckerei": 73,
+    "metzgerei": 27,
+    "friseur": 92,
+    "kfz": 66,
+    "elektriker": 4,
+    "shk": 10,
+    "schreiner": 13,
+    "maler": 5,
+    "dachdecker": 2
    },
    "proAnbieter": {
+    "eis": 14532,
     "cafe": 3963,
     "bar": 4113,
-    "eis": 14532
+    "baeckerei": 2986,
+    "metzgerei": 8074,
+    "friseur": 2369,
+    "kfz": 3303,
+    "elektriker": 54497,
+    "shk": 21799,
+    "schreiner": 16768,
+    "maler": 43597,
+    "dachdecker": 108993
    },
    "score": {
+    "eis": 16,
     "cafe": 73,
     "bar": 74,
-    "eis": 16
+    "baeckerei": 51,
+    "metzgerei": 18,
+    "friseur": 22,
+    "kfz": 38,
+    "elektriker": 55,
+    "shk": 38,
+    "schreiner": 14,
+    "maler": 35,
+    "dachdecker": 48
    }
   },
   {
@@ -601,19 +1366,46 @@
    "typ": "Landkreis",
    "pop": 131467,
    "anbieter": {
+    "eis": 4,
     "cafe": 26,
     "bar": 25,
-    "eis": 4
+    "baeckerei": 37,
+    "metzgerei": 11,
+    "friseur": 27,
+    "kfz": 26,
+    "elektriker": 5,
+    "shk": 4,
+    "schreiner": 8,
+    "maler": 2,
+    "dachdecker": 5
    },
    "proAnbieter": {
+    "eis": 32867,
     "cafe": 5056,
     "bar": 5259,
-    "eis": 32867
+    "baeckerei": 3553,
+    "metzgerei": 11952,
+    "friseur": 4869,
+    "kfz": 5056,
+    "elektriker": 26293,
+    "shk": 32867,
+    "schreiner": 16433,
+    "maler": 65734,
+    "dachdecker": 26293
    },
    "score": {
+    "eis": 58,
     "cafe": 100,
     "bar": 100,
-    "eis": 58
+    "baeckerei": 72,
+    "metzgerei": 35,
+    "friseur": 72,
+    "kfz": 80,
+    "elektriker": 23,
+    "shk": 62,
+    "schreiner": 14,
+    "maler": 55,
+    "dachdecker": 10
    }
   },
   {
@@ -622,19 +1414,46 @@
    "typ": "Landkreis",
    "pop": 129075,
    "anbieter": {
+    "eis": 8,
     "cafe": 40,
     "bar": 40,
-    "eis": 8
+    "baeckerei": 66,
+    "metzgerei": 24,
+    "friseur": 54,
+    "kfz": 22,
+    "elektriker": 3,
+    "shk": 7,
+    "schreiner": 12,
+    "maler": 4,
+    "dachdecker": 0
    },
    "proAnbieter": {
+    "eis": 16134,
     "cafe": 3227,
     "bar": 3227,
-    "eis": 16134
+    "baeckerei": 1956,
+    "metzgerei": 5378,
+    "friseur": 2390,
+    "kfz": 5867,
+    "elektriker": 43025,
+    "shk": 18439,
+    "schreiner": 10756,
+    "maler": 32269,
+    "dachdecker": 129075
    },
    "score": {
+    "eis": 20,
     "cafe": 54,
     "bar": 54,
-    "eis": 20
+    "baeckerei": 14,
+    "metzgerei": 7,
+    "friseur": 23,
+    "kfz": 100,
+    "elektriker": 42,
+    "shk": 31,
+    "schreiner": 8,
+    "maler": 24,
+    "dachdecker": 57
    }
   },
   {
@@ -643,19 +1462,46 @@
    "typ": "Landkreis",
    "pop": 155882,
    "anbieter": {
+    "eis": 8,
     "cafe": 43,
     "bar": 42,
-    "eis": 8
+    "baeckerei": 63,
+    "metzgerei": 17,
+    "friseur": 78,
+    "kfz": 64,
+    "elektriker": 11,
+    "shk": 21,
+    "schreiner": 6,
+    "maler": 9,
+    "dachdecker": 10
    },
    "proAnbieter": {
+    "eis": 19485,
     "cafe": 3625,
     "bar": 3711,
-    "eis": 19485
+    "baeckerei": 2474,
+    "metzgerei": 9170,
+    "friseur": 1998,
+    "kfz": 2436,
+    "elektriker": 14171,
+    "shk": 7423,
+    "schreiner": 25980,
+    "maler": 17320,
+    "dachdecker": 15588
    },
    "score": {
+    "eis": 27,
     "cafe": 64,
     "bar": 65,
-    "eis": 27
+    "baeckerei": 33,
+    "metzgerei": 23,
+    "friseur": 15,
+    "kfz": 16,
+    "elektriker": 10,
+    "shk": 7,
+    "schreiner": 24,
+    "maler": 11,
+    "dachdecker": 6
    }
   },
   {
@@ -664,19 +1510,46 @@
    "typ": "Kreisfreie Stadt",
    "pop": 101486,
    "anbieter": {
+    "eis": 2,
     "cafe": 63,
     "bar": 70,
-    "eis": 2
+    "baeckerei": 37,
+    "metzgerei": 14,
+    "friseur": 81,
+    "kfz": 29,
+    "elektriker": 10,
+    "shk": 2,
+    "schreiner": 1,
+    "maler": 4,
+    "dachdecker": 3
    },
    "proAnbieter": {
+    "eis": 50743,
     "cafe": 1611,
     "bar": 1450,
-    "eis": 50743
+    "baeckerei": 2743,
+    "metzgerei": 7249,
+    "friseur": 1253,
+    "kfz": 3500,
+    "elektriker": 10149,
+    "shk": 50743,
+    "schreiner": 101486,
+    "maler": 25372,
+    "dachdecker": 33829
    },
    "score": {
+    "eis": 100,
     "cafe": 13,
     "bar": 14,
-    "eis": 100
+    "baeckerei": 42,
+    "metzgerei": 15,
+    "friseur": 0,
+    "kfz": 42,
+    "elektriker": 5,
+    "shk": 100,
+    "schreiner": 100,
+    "maler": 18,
+    "dachdecker": 14
    }
   },
   {
@@ -685,19 +1558,46 @@
    "typ": "Kreisfreie Stadt",
    "pop": 176110,
    "anbieter": {
+    "eis": 8,
     "cafe": 72,
     "bar": 114,
-    "eis": 8
+    "baeckerei": 64,
+    "metzgerei": 8,
+    "friseur": 86,
+    "kfz": 40,
+    "elektriker": 20,
+    "shk": 16,
+    "schreiner": 9,
+    "maler": 5,
+    "dachdecker": 2
    },
    "proAnbieter": {
+    "eis": 22014,
     "cafe": 2446,
     "bar": 1545,
-    "eis": 22014
+    "baeckerei": 2752,
+    "metzgerei": 22014,
+    "friseur": 2048,
+    "kfz": 4403,
+    "elektriker": 8806,
+    "shk": 11007,
+    "schreiner": 19568,
+    "maler": 35222,
+    "dachdecker": 88055
    },
    "score": {
+    "eis": 33,
     "cafe": 34,
     "bar": 16,
-    "eis": 33
+    "baeckerei": 43,
+    "metzgerei": 79,
+    "friseur": 16,
+    "kfz": 64,
+    "elektriker": 4,
+    "shk": 15,
+    "schreiner": 17,
+    "maler": 27,
+    "dachdecker": 39
    }
   },
   {
@@ -706,19 +1606,46 @@
    "typ": "Landkreis",
    "pop": 111969,
    "anbieter": {
+    "eis": 9,
     "cafe": 53,
     "bar": 31,
-    "eis": 9
+    "baeckerei": 62,
+    "metzgerei": 23,
+    "friseur": 36,
+    "kfz": 36,
+    "elektriker": 3,
+    "shk": 8,
+    "schreiner": 19,
+    "maler": 8,
+    "dachdecker": 2
    },
    "proAnbieter": {
+    "eis": 12441,
     "cafe": 2113,
     "bar": 3612,
-    "eis": 12441
+    "baeckerei": 1806,
+    "metzgerei": 4868,
+    "friseur": 3110,
+    "kfz": 3110,
+    "elektriker": 37323,
+    "shk": 13996,
+    "schreiner": 5893,
+    "maler": 13996,
+    "dachdecker": 55985
    },
    "score": {
+    "eis": 11,
     "cafe": 26,
     "bar": 63,
-    "eis": 11
+    "baeckerei": 8,
+    "metzgerei": 4,
+    "friseur": 37,
+    "kfz": 33,
+    "elektriker": 36,
+    "shk": 21,
+    "schreiner": 3,
+    "maler": 8,
+    "dachdecker": 24
    }
   },
   {
@@ -727,19 +1654,46 @@
    "typ": "Landkreis",
    "pop": 100087,
    "anbieter": {
+    "eis": 3,
     "cafe": 34,
     "bar": 50,
-    "eis": 3
+    "baeckerei": 38,
+    "metzgerei": 15,
+    "friseur": 16,
+    "kfz": 38,
+    "elektriker": 3,
+    "shk": 5,
+    "schreiner": 8,
+    "maler": 1,
+    "dachdecker": 2
    },
    "proAnbieter": {
+    "eis": 33362,
     "cafe": 2944,
     "bar": 2002,
-    "eis": 33362
+    "baeckerei": 2634,
+    "metzgerei": 6672,
+    "friseur": 6255,
+    "kfz": 2634,
+    "elektriker": 33362,
+    "shk": 20017,
+    "schreiner": 12511,
+    "maler": 100087,
+    "dachdecker": 50044
    },
    "score": {
+    "eis": 60,
     "cafe": 47,
     "bar": 26,
-    "eis": 60
+    "baeckerei": 38,
+    "metzgerei": 12,
+    "friseur": 100,
+    "kfz": 21,
+    "elektriker": 31,
+    "shk": 34,
+    "schreiner": 10,
+    "maler": 86,
+    "dachdecker": 21
    }
   },
   {
@@ -748,20 +1702,54 @@
    "typ": "Kreisfreie Stadt",
    "pop": 49122,
    "anbieter": {
+    "eis": 2,
     "cafe": 15,
     "bar": 14,
-    "eis": 2
+    "baeckerei": 19,
+    "metzgerei": 4,
+    "friseur": 20,
+    "kfz": 16,
+    "elektriker": 0,
+    "shk": 4,
+    "schreiner": 2,
+    "maler": 0,
+    "dachdecker": 0
    },
    "proAnbieter": {
+    "eis": 24561,
     "cafe": 3275,
     "bar": 3509,
-    "eis": 24561
+    "baeckerei": 2585,
+    "metzgerei": 12281,
+    "friseur": 2456,
+    "kfz": 3070,
+    "elektriker": 49122,
+    "shk": 12281,
+    "schreiner": 24561,
+    "maler": 49122,
+    "dachdecker": 49122
    },
    "score": {
+    "eis": 39,
     "cafe": 55,
     "bar": 60,
-    "eis": 39
+    "baeckerei": 37,
+    "metzgerei": 36,
+    "friseur": 24,
+    "kfz": 32,
+    "elektriker": 49,
+    "shk": 18,
+    "schreiner": 22,
+    "maler": 40,
+    "dachdecker": 21
    }
   }
+ ],
+ "duenneDaten": [
+  "elektriker",
+  "shk",
+  "schreiner",
+  "maler",
+  "dachdecker"
  ]
 }

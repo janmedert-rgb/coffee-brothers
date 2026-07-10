@@ -12,9 +12,20 @@ const OVERPASS_URL = 'https://overpass-api.de/api/interpreter';
 const WIKIDATA_URL = 'https://query.wikidata.org/sparql';
 
 const KATEGORIEN = {
+  // Gastronomie
+  eis: { label: 'Eiscafés', match: t => t.amenity === 'ice_cream' },
   cafe: { label: 'Cafés', match: t => t.amenity === 'cafe' },
   bar: { label: 'Bars & Pubs', match: t => t.amenity === 'bar' || t.amenity === 'pub' },
-  eis: { label: 'Eiscafés', match: t => t.amenity === 'ice_cream' },
+  baeckerei: { label: 'Bäckereien', match: t => t.shop === 'bakery' },
+  metzgerei: { label: 'Metzgereien', match: t => t.shop === 'butcher' },
+  // Handwerk & Dienstleistung
+  friseur: { label: 'Friseure', match: t => t.shop === 'hairdresser' },
+  kfz: { label: 'Kfz-Werkstätten', match: t => t.shop === 'car_repair' },
+  elektriker: { label: 'Elektriker', match: t => t.craft === 'electrician' },
+  shk: { label: 'Sanitär & Heizung', match: t => t.craft === 'plumber' || t.craft === 'hvac' },
+  schreiner: { label: 'Schreinereien', match: t => t.craft === 'carpenter' || t.craft === 'joiner' },
+  maler: { label: 'Maler', match: t => t.craft === 'painter' },
+  dachdecker: { label: 'Dachdecker', match: t => t.craft === 'roofer' },
 };
 
 async function fetchJson(url, opts) {
@@ -56,7 +67,11 @@ console.log(`  Einwohnerzahlen für ${Object.keys(popByRs).length} Schlüssel`);
 console.log('Lade POIs (Overpass, kann ~1 min dauern) …');
 const query = `[out:json][timeout:300];
 area["ISO3166-2"="DE-RP"][admin_level=4]->.rlp;
-nwr["amenity"~"^(cafe|bar|pub|ice_cream)$"](area.rlp);
+(
+  nwr["amenity"~"^(cafe|bar|pub|ice_cream)$"](area.rlp);
+  nwr["shop"~"^(bakery|butcher|hairdresser|car_repair)$"](area.rlp);
+  nwr["craft"~"^(electrician|plumber|hvac|carpenter|joiner|painter|roofer)$"](area.rlp);
+);
 out center qt;`;
 // via curl (Node-fetch wird teils mit 406 abgelehnt); Overpass 406t sporadisch -> Retries
 let osm;
@@ -96,7 +111,8 @@ const boxes = kreise.map(f => {
   return { minX, minY, maxX, maxY };
 });
 
-const counts = Object.fromEntries(kreise.map(f => [f.properties.rs, { cafe: 0, bar: 0, eis: 0 }]));
+const counts = Object.fromEntries(kreise.map(f => [f.properties.rs,
+  Object.fromEntries(Object.keys(KATEGORIEN).map(k => [k, 0]))]));
 let unmatched = 0;
 for (const el of osm.elements) {
   const lon = el.lon ?? el.center?.lon, lat = el.lat ?? el.center?.lat;
@@ -138,6 +154,8 @@ writeFileSync('data/standorte.json', JSON.stringify({
   generated: new Date().toISOString().slice(0, 10),
   quellen: 'OpenStreetMap (ODbL), Wikidata, GeoBasis-DE/BKG (dl-de/by-2-0)',
   kategorien: Object.fromEntries(Object.entries(KATEGORIEN).map(([k, v]) => [k, v.label])),
+  // craft=* ist in OSM deutlich lückenhafter erfasst als shop=*/amenity=*
+  duenneDaten: ['elektriker', 'shk', 'schreiner', 'maler', 'dachdecker'],
   kreise: rows,
 }, null, 1));
 console.log('Fertig: data/rlp-kreise.geo.json + data/standorte.json');
