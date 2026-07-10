@@ -1,0 +1,767 @@
+{
+ "generated": "2026-07-10",
+ "quellen": "OpenStreetMap (ODbL), Wikidata, GeoBasis-DE/BKG (dl-de/by-2-0)",
+ "kategorien": {
+  "cafe": "Cafés",
+  "bar": "Bars & Pubs",
+  "eis": "Eiscafés"
+ },
+ "kreise": [
+  {
+   "rs": "07143",
+   "name": "Westerwaldkreis",
+   "typ": "Landkreis",
+   "pop": 207803,
+   "anbieter": {
+    "cafe": 69,
+    "bar": 57,
+    "eis": 7
+   },
+   "proAnbieter": {
+    "cafe": 3012,
+    "bar": 3646,
+    "eis": 29686
+   },
+   "score": {
+    "cafe": 49,
+    "bar": 63,
+    "eis": 51
+   }
+  },
+  {
+   "rs": "07211",
+   "name": "Trier",
+   "typ": "Kreisfreie Stadt",
+   "pop": 112737,
+   "anbieter": {
+    "cafe": 50,
+    "bar": 67,
+    "eis": 14
+   },
+   "proAnbieter": {
+    "cafe": 2255,
+    "bar": 1683,
+    "eis": 8053
+   },
+   "score": {
+    "cafe": 30,
+    "bar": 19,
+    "eis": 1
+   }
+  },
+  {
+   "rs": "07140",
+   "name": "Rhein-Hunsrück-Kreis",
+   "typ": "Landkreis",
+   "pop": 105566,
+   "anbieter": {
+    "cafe": 43,
+    "bar": 36,
+    "eis": 10
+   },
+   "proAnbieter": {
+    "cafe": 2455,
+    "bar": 2932,
+    "eis": 10557
+   },
+   "score": {
+    "cafe": 35,
+    "bar": 47,
+    "eis": 7
+   }
+  },
+  {
+   "rs": "07316",
+   "name": "Neustadt an der Weinstraße",
+   "typ": "Kreisfreie Stadt",
+   "pop": 53920,
+   "anbieter": {
+    "cafe": 35,
+    "bar": 23,
+    "eis": 6
+   },
+   "proAnbieter": {
+    "cafe": 1541,
+    "bar": 2344,
+    "eis": 8987
+   },
+   "score": {
+    "cafe": 12,
+    "bar": 34,
+    "eis": 3
+   }
+  },
+  {
+   "rs": "07317",
+   "name": "Pirmasens",
+   "typ": "Kreisfreie Stadt",
+   "pop": 40941,
+   "anbieter": {
+    "cafe": 15,
+    "bar": 9,
+    "eis": 3
+   },
+   "proAnbieter": {
+    "cafe": 2729,
+    "bar": 4549,
+    "eis": 13647
+   },
+   "score": {
+    "cafe": 41,
+    "bar": 84,
+    "eis": 14
+   }
+  },
+  {
+   "rs": "07231",
+   "name": "Bernkastel-Wittlich",
+   "typ": "Landkreis",
+   "pop": 115083,
+   "anbieter": {
+    "cafe": 81,
+    "bar": 69,
+    "eis": 9
+   },
+   "proAnbieter": {
+    "cafe": 1421,
+    "bar": 1668,
+    "eis": 12787
+   },
+   "score": {
+    "cafe": 9,
+    "bar": 19,
+    "eis": 12
+   }
+  },
+  {
+   "rs": "07332",
+   "name": "Bad Dürkheim",
+   "typ": "Landkreis",
+   "pop": 133004,
+   "anbieter": {
+    "cafe": 50,
+    "bar": 51,
+    "eis": 15
+   },
+   "proAnbieter": {
+    "cafe": 2660,
+    "bar": 2608,
+    "eis": 8867
+   },
+   "score": {
+    "cafe": 40,
+    "bar": 40,
+    "eis": 3
+   }
+  },
+  {
+   "rs": "07135",
+   "name": "Cochem-Zell",
+   "typ": "Landkreis",
+   "pop": 61587,
+   "anbieter": {
+    "cafe": 57,
+    "bar": 73,
+    "eis": 8
+   },
+   "proAnbieter": {
+    "cafe": 1080,
+    "bar": 844,
+    "eis": 7698
+   },
+   "score": {
+    "cafe": 0,
+    "bar": 0,
+    "eis": 0
+   }
+  },
+  {
+   "rs": "07313",
+   "name": "Landau in der Pfalz",
+   "typ": "Kreisfreie Stadt",
+   "pop": 48341,
+   "anbieter": {
+    "cafe": 33,
+    "bar": 39,
+    "eis": 5
+   },
+   "proAnbieter": {
+    "cafe": 1465,
+    "bar": 1240,
+    "eis": 9668
+   },
+   "score": {
+    "cafe": 10,
+    "bar": 9,
+    "eis": 5
+   }
+  },
+  {
+   "rs": "07111",
+   "name": "Koblenz",
+   "typ": "Kreisfreie Stadt",
+   "pop": 115298,
+   "anbieter": {
+    "cafe": 63,
+    "bar": 62,
+    "eis": 8
+   },
+   "proAnbieter": {
+    "cafe": 1830,
+    "bar": 1860,
+    "eis": 14412
+   },
+   "score": {
+    "cafe": 19,
+    "bar": 23,
+    "eis": 16
+   }
+  },
+  {
+   "rs": "07138",
+   "name": "Neuwied",
+   "typ": "Landkreis",
+   "pop": 188851,
+   "anbieter": {
+    "cafe": 59,
+    "bar": 55,
+    "eis": 10
+   },
+   "proAnbieter": {
+    "cafe": 3201,
+    "bar": 3434,
+    "eis": 18885
+   },
+   "score": {
+    "cafe": 53,
+    "bar": 59,
+    "eis": 26
+   }
+  },
+  {
+   "rs": "07331",
+   "name": "Alzey-Worms",
+   "typ": "Landkreis",
+   "pop": 132536,
+   "anbieter": {
+    "cafe": 30,
+    "bar": 39,
+    "eis": 6
+   },
+   "proAnbieter": {
+    "cafe": 4418,
+    "bar": 3398,
+    "eis": 22089
+   },
+   "score": {
+    "cafe": 84,
+    "bar": 58,
+    "eis": 33
+   }
+  },
+  {
+   "rs": "07315",
+   "name": "Mainz",
+   "typ": "Kreisfreie Stadt",
+   "pop": 222889,
+   "anbieter": {
+    "cafe": 92,
+    "bar": 121,
+    "eis": 23
+   },
+   "proAnbieter": {
+    "cafe": 2423,
+    "bar": 1842,
+    "eis": 9691
+   },
+   "score": {
+    "cafe": 34,
+    "bar": 23,
+    "eis": 5
+   }
+  },
+  {
+   "rs": "07333",
+   "name": "Donnersbergkreis",
+   "typ": "Landkreis",
+   "pop": 75203,
+   "anbieter": {
+    "cafe": 17,
+    "bar": 29,
+    "eis": 3
+   },
+   "proAnbieter": {
+    "cafe": 4424,
+    "bar": 2593,
+    "eis": 25068
+   },
+   "score": {
+    "cafe": 84,
+    "bar": 40,
+    "eis": 40
+   }
+  },
+  {
+   "rs": "07320",
+   "name": "Zweibrücken",
+   "typ": "Kreisfreie Stadt",
+   "pop": 34613,
+   "anbieter": {
+    "cafe": 10,
+    "bar": 16,
+    "eis": 2
+   },
+   "proAnbieter": {
+    "cafe": 3461,
+    "bar": 2163,
+    "eis": 17307
+   },
+   "score": {
+    "cafe": 60,
+    "bar": 30,
+    "eis": 22
+   }
+  },
+  {
+   "rs": "07133",
+   "name": "Bad Kreuznach",
+   "typ": "Landkreis",
+   "pop": 164748,
+   "anbieter": {
+    "cafe": 57,
+    "bar": 48,
+    "eis": 19
+   },
+   "proAnbieter": {
+    "cafe": 2890,
+    "bar": 3432,
+    "eis": 8671
+   },
+   "score": {
+    "cafe": 46,
+    "bar": 59,
+    "eis": 2
+   }
+  },
+  {
+   "rs": "07131",
+   "name": "Ahrweiler",
+   "typ": "Landkreis",
+   "pop": 129353,
+   "anbieter": {
+    "cafe": 57,
+    "bar": 53,
+    "eis": 16
+   },
+   "proAnbieter": {
+    "cafe": 2269,
+    "bar": 2441,
+    "eis": 8085
+   },
+   "score": {
+    "cafe": 30,
+    "bar": 36,
+    "eis": 1
+   }
+  },
+  {
+   "rs": "07340",
+   "name": "Südwestpfalz",
+   "typ": "Landkreis",
+   "pop": 94831,
+   "anbieter": {
+    "cafe": 21,
+    "bar": 28,
+    "eis": 2
+   },
+   "proAnbieter": {
+    "cafe": 4516,
+    "bar": 3387,
+    "eis": 47416
+   },
+   "score": {
+    "cafe": 86,
+    "bar": 58,
+    "eis": 92
+   }
+  },
+  {
+   "rs": "07134",
+   "name": "Birkenfeld",
+   "typ": "Landkreis",
+   "pop": 81760,
+   "anbieter": {
+    "cafe": 24,
+    "bar": 51,
+    "eis": 4
+   },
+   "proAnbieter": {
+    "cafe": 3407,
+    "bar": 1603,
+    "eis": 20440
+   },
+   "score": {
+    "cafe": 59,
+    "bar": 17,
+    "eis": 30
+   }
+  },
+  {
+   "rs": "07235",
+   "name": "Trier-Saarburg",
+   "typ": "Landkreis",
+   "pop": 153814,
+   "anbieter": {
+    "cafe": 35,
+    "bar": 57,
+    "eis": 5
+   },
+   "proAnbieter": {
+    "cafe": 4395,
+    "bar": 2698,
+    "eis": 30763
+   },
+   "score": {
+    "cafe": 83,
+    "bar": 42,
+    "eis": 54
+   }
+  },
+  {
+   "rs": "07318",
+   "name": "Speyer",
+   "typ": "Kreisfreie Stadt",
+   "pop": 51203,
+   "anbieter": {
+    "cafe": 31,
+    "bar": 28,
+    "eis": 6
+   },
+   "proAnbieter": {
+    "cafe": 1652,
+    "bar": 1829,
+    "eis": 8534
+   },
+   "score": {
+    "cafe": 14,
+    "bar": 22,
+    "eis": 2
+   }
+  },
+  {
+   "rs": "07233",
+   "name": "Vulkaneifel",
+   "typ": "Landkreis",
+   "pop": 60777,
+   "anbieter": {
+    "cafe": 34,
+    "bar": 21,
+    "eis": 5
+   },
+   "proAnbieter": {
+    "cafe": 1788,
+    "bar": 2894,
+    "eis": 12155
+   },
+   "score": {
+    "cafe": 18,
+    "bar": 46,
+    "eis": 10
+   }
+  },
+  {
+   "rs": "07335",
+   "name": "Kaiserslautern",
+   "typ": "Landkreis",
+   "pop": 105504,
+   "anbieter": {
+    "cafe": 32,
+    "bar": 33,
+    "eis": 5
+   },
+   "proAnbieter": {
+    "cafe": 3297,
+    "bar": 3197,
+    "eis": 21101
+   },
+   "score": {
+    "cafe": 56,
+    "bar": 53,
+    "eis": 31
+   }
+  },
+  {
+   "rs": "07319",
+   "name": "Worms",
+   "typ": "Kreisfreie Stadt",
+   "pop": 85609,
+   "anbieter": {
+    "cafe": 34,
+    "bar": 25,
+    "eis": 9
+   },
+   "proAnbieter": {
+    "cafe": 2518,
+    "bar": 3424,
+    "eis": 9512
+   },
+   "score": {
+    "cafe": 36,
+    "bar": 58,
+    "eis": 4
+   }
+  },
+  {
+   "rs": "07137",
+   "name": "Mayen-Koblenz",
+   "typ": "Landkreis",
+   "pop": 218210,
+   "anbieter": {
+    "cafe": 63,
+    "bar": 65,
+    "eis": 10
+   },
+   "proAnbieter": {
+    "cafe": 3464,
+    "bar": 3357,
+    "eis": 21821
+   },
+   "score": {
+    "cafe": 60,
+    "bar": 57,
+    "eis": 33
+   }
+  },
+  {
+   "rs": "07141",
+   "name": "Rhein-Lahn-Kreis",
+   "typ": "Landkreis",
+   "pop": 124381,
+   "anbieter": {
+    "cafe": 52,
+    "bar": 40,
+    "eis": 6
+   },
+   "proAnbieter": {
+    "cafe": 2392,
+    "bar": 3110,
+    "eis": 20730
+   },
+   "score": {
+    "cafe": 33,
+    "bar": 51,
+    "eis": 30
+   }
+  },
+  {
+   "rs": "07336",
+   "name": "Kusel",
+   "typ": "Landkreis",
+   "pop": 71462,
+   "anbieter": {
+    "cafe": 18,
+    "bar": 40,
+    "eis": 5
+   },
+   "proAnbieter": {
+    "cafe": 3970,
+    "bar": 1787,
+    "eis": 14292
+   },
+   "score": {
+    "cafe": 73,
+    "bar": 21,
+    "eis": 15
+   }
+  },
+  {
+   "rs": "07339",
+   "name": "Mainz-Bingen",
+   "typ": "Landkreis",
+   "pop": 217986,
+   "anbieter": {
+    "cafe": 55,
+    "bar": 53,
+    "eis": 15
+   },
+   "proAnbieter": {
+    "cafe": 3963,
+    "bar": 4113,
+    "eis": 14532
+   },
+   "score": {
+    "cafe": 73,
+    "bar": 74,
+    "eis": 16
+   }
+  },
+  {
+   "rs": "07132",
+   "name": "Altenkirchen (Westerwald)",
+   "typ": "Landkreis",
+   "pop": 131467,
+   "anbieter": {
+    "cafe": 26,
+    "bar": 25,
+    "eis": 4
+   },
+   "proAnbieter": {
+    "cafe": 5056,
+    "bar": 5259,
+    "eis": 32867
+   },
+   "score": {
+    "cafe": 100,
+    "bar": 100,
+    "eis": 58
+   }
+  },
+  {
+   "rs": "07334",
+   "name": "Germersheim",
+   "typ": "Landkreis",
+   "pop": 129075,
+   "anbieter": {
+    "cafe": 40,
+    "bar": 40,
+    "eis": 8
+   },
+   "proAnbieter": {
+    "cafe": 3227,
+    "bar": 3227,
+    "eis": 16134
+   },
+   "score": {
+    "cafe": 54,
+    "bar": 54,
+    "eis": 20
+   }
+  },
+  {
+   "rs": "07338",
+   "name": "Rhein-Pfalz-Kreis",
+   "typ": "Landkreis",
+   "pop": 155882,
+   "anbieter": {
+    "cafe": 43,
+    "bar": 42,
+    "eis": 8
+   },
+   "proAnbieter": {
+    "cafe": 3625,
+    "bar": 3711,
+    "eis": 19485
+   },
+   "score": {
+    "cafe": 64,
+    "bar": 65,
+    "eis": 27
+   }
+  },
+  {
+   "rs": "07312",
+   "name": "Kaiserslautern",
+   "typ": "Kreisfreie Stadt",
+   "pop": 101486,
+   "anbieter": {
+    "cafe": 63,
+    "bar": 70,
+    "eis": 2
+   },
+   "proAnbieter": {
+    "cafe": 1611,
+    "bar": 1450,
+    "eis": 50743
+   },
+   "score": {
+    "cafe": 13,
+    "bar": 14,
+    "eis": 100
+   }
+  },
+  {
+   "rs": "07314",
+   "name": "Ludwigshafen am Rhein",
+   "typ": "Kreisfreie Stadt",
+   "pop": 176110,
+   "anbieter": {
+    "cafe": 72,
+    "bar": 114,
+    "eis": 8
+   },
+   "proAnbieter": {
+    "cafe": 2446,
+    "bar": 1545,
+    "eis": 22014
+   },
+   "score": {
+    "cafe": 34,
+    "bar": 16,
+    "eis": 33
+   }
+  },
+  {
+   "rs": "07337",
+   "name": "Südliche Weinstraße",
+   "typ": "Landkreis",
+   "pop": 111969,
+   "anbieter": {
+    "cafe": 53,
+    "bar": 31,
+    "eis": 9
+   },
+   "proAnbieter": {
+    "cafe": 2113,
+    "bar": 3612,
+    "eis": 12441
+   },
+   "score": {
+    "cafe": 26,
+    "bar": 63,
+    "eis": 11
+   }
+  },
+  {
+   "rs": "07232",
+   "name": "Eifelkreis Bitburg-Prüm",
+   "typ": "Landkreis",
+   "pop": 100087,
+   "anbieter": {
+    "cafe": 34,
+    "bar": 50,
+    "eis": 3
+   },
+   "proAnbieter": {
+    "cafe": 2944,
+    "bar": 2002,
+    "eis": 33362
+   },
+   "score": {
+    "cafe": 47,
+    "bar": 26,
+    "eis": 60
+   }
+  },
+  {
+   "rs": "07311",
+   "name": "Frankenthal (Pfalz)",
+   "typ": "Kreisfreie Stadt",
+   "pop": 49122,
+   "anbieter": {
+    "cafe": 15,
+    "bar": 14,
+    "eis": 2
+   },
+   "proAnbieter": {
+    "cafe": 3275,
+    "bar": 3509,
+    "eis": 24561
+   },
+   "score": {
+    "cafe": 55,
+    "bar": 60,
+    "eis": 39
+   }
+  }
+ ]
+}

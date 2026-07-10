@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/img/logo.webp">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+<script defer src="assets/js/app.js"></script>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script defer src="assets/js/standorte.js"></script>
+<title>Standort-Analyse | Coffee Brothers</title>
+<meta name="robots" content="noindex">
+<style>
+.sa-wrap{max-width:1100px;margin:0 auto;padding:120px 20px 60px}
+.sa-wrap .eyebrow{color:var(--gold)}
+.sa-intro{max-width:640px;color:var(--cream);opacity:.85;line-height:1.6}
+.sa-controls{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 14px}
+.sa-cat{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:var(--cream);font:inherit;cursor:pointer;transition:.2s}
+.sa-cat:hover{border-color:var(--mint)}
+.sa-cat.active{background:var(--mint);color:var(--bg);border-color:var(--mint);font-weight:600}
+#sa-map{height:560px;border-radius:18px;border:1px solid var(--line);background:var(--panel);box-shadow:var(--shadow)}
+.leaflet-container{background:var(--panel);font:inherit}
+.leaflet-tooltip.sa-tip{background:#0f2e26;border:1px solid var(--line);border-radius:10px;color:var(--cream);box-shadow:0 10px 30px rgba(0,0,0,.4);padding:10px 12px}
+.leaflet-tooltip.sa-tip::before{display:none}
+.sa-tip h5{margin:0 0 4px;color:var(--mint);font-size:.95rem}
+.sa-tip table{border-collapse:collapse}
+.sa-tip td{padding:1px 0;font-size:.82rem;color:var(--cream)}
+.sa-tip td:first-child{opacity:.7;padding-right:14px}
+.sa-legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:14px 0 6px;font-size:.85rem;color:var(--cream)}
+.sa-legend .lab{opacity:.75;margin:0 6px}
+.sa-swatch{width:34px;height:14px;border-radius:4px;display:inline-block}
+.sa-note{font-size:.82rem;color:var(--cream);opacity:.6;line-height:1.5;max-width:760px}
+.sa-table-wrap{overflow-x:auto;margin-top:36px;border:1px solid var(--line);border-radius:14px}
+.sa-table{width:100%;border-collapse:collapse;font-size:.9rem;color:var(--cream)}
+.sa-table th,.sa-table td{padding:9px 14px;text-align:left;border-bottom:1px solid var(--line)}
+.sa-table th{color:var(--gold);font-weight:600;white-space:nowrap;position:sticky;top:0;background:var(--panel)}
+.sa-table td.num,.sa-table th.num{text-align:right;font-variant-numeric:tabular-nums}
+.sa-table tr:last-child td{border-bottom:none}
+.sa-table tr.worms td{background:rgba(198,152,85,.14)}
+.sa-table tr.worms td:first-child{color:var(--gold);font-weight:600}
+.sa-scorebar{display:inline-block;width:64px;height:8px;border-radius:4px;background:rgba(255,255,255,.08);vertical-align:middle;margin-right:8px;overflow:hidden}
+.sa-scorebar i{display:block;height:100%;border-radius:4px}
+@media (max-width:700px){#sa-map{height:420px}.sa-wrap{padding-top:100px}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="cursor-glow"></div>
+
+<header class="topbar">
+  <a class="brand magnetic" href="index.html"><img src="assets/img/logo.webp" alt="Coffee Brothers Logo"><span>Coffee Brothers</span></a>
+  <button class="hamb" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  <nav class="nav">
+    <a href="menu.html">Menü</a>
+    <a href="specials.html">Specials</a>
+    <a href="reservieren.html">Reservieren</a>
+    <a href="bestellen.html">Bestellen</a>
+    <a href="besuch.html">Besuch</a>
+  </nav>
+  <a class="pill wa" href="https://wa.me/4915567021202?text=Hi%20Coffee%20Brothers%2C%20ich%20habe%20eine%20Frage." target="_blank" rel="noopener">WhatsApp</a>
+</header>
+
+<main>
+<section class="sa-wrap">
+  <p class="eyebrow">Internes Tool</p>
+  <h1>Standort-Analyse <span class="mint">Rheinland-Pfalz</span></h1>
+  <p class="sa-intro">Wo ist die Versorgungslücke am größten? Die Karte färbt jeden Landkreis danach ein, wie viele Einwohner sich einen Anbieter teilen müssen — je heller das Mint, desto weniger Angebot pro Kopf und desto größer die Chance für einen neuen Standort.</p>
+
+  <div class="sa-controls" id="sa-cats" role="tablist" aria-label="Kategorie wählen"></div>
+
+  <div id="sa-map" aria-label="Karte der Landkreise in Rheinland-Pfalz"></div>
+
+  <div class="sa-legend" id="sa-legend"></div>
+  <p class="sa-note" id="sa-note"></p>
+
+  <div class="sa-table-wrap">
+    <table class="sa-table" id="sa-table" aria-label="Ranking der Landkreise nach Versorgungslücke"></table>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div><img src="assets/img/logo.webp" alt="" class="footer-logo"><p>Good Coffee.<br>Good People.<br>Good Vibes.</p></div>
+  <div><h4>Öffnungszeiten</h4><p>Mo–Do 09:00–20:00<br>Fr–Sa 09:00–22:00<br>So 12:00–18:00</p></div>
+  <div><h4>Besuch</h4><p>Obermarkt 8<br>67547 Worms</p><a href="https://maps.google.com/?q=Obermarkt%208%2067547%20Worms" target="_blank" rel="noopener">Maps öffnen →</a></div>
+  <div><h4>Rechtliches</h4><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+</footer>
+
+</body>
+</html>
